@@ -1,2 +1,1 @@
-angular
-  .module('dailyDocumentary',[]);
+var dailyDocumentary = angular.module('dailyDocumentary',[]);
