@@ -1,7 +1,10 @@
-dailyDocumentary.service('getDocList', ['$http', function($http) {
+function getDocList($http) {
   $http.get('https://www.reddit.com/r/documentaries.json')
       .then(function(response) {
-        debugger;
-      });
 
-}]);
+      });
+}
+
+angular
+  .module('dailyDocumentary')
+  .service('getDocList', getDocList);

@@ -1,4 +1,4 @@
-dailyDocumentary.component('docList', {
+function docList() {
 
   template: '<div>Hello {{$ctrl.message}}</div>',
 
@@ -6,4 +6,8 @@ dailyDocumentary.component('docList', {
     this.message = "Steve";
     this.docList = getDocList;
   }
-});
+};
+
+angular
+  .module('app')
+  .component('docList', docList);
