@@ -1,4 +1,4 @@
-function docList() {
+var docList = {
 
   template: '<div>Hello {{$ctrl.message}}</div>',
 
