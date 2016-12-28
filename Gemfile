@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-angular'
-  gem 'rails-assets-ui-router'
+  gem 'rails-assets-angular-ui-router'
 end
 
 group :development, :test do
