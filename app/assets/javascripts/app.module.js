@@ -4,27 +4,27 @@
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'home.html'
+        templateUrl: 'views/home.html'
       })
       .state('home.profile', {
         url: 'profile',
-        templateUrl: 'profile.html'
+        templateUrl: 'views/profile.html'
       })
       .state('home.timeline', {
         url: 'timeline',
-        templateUrl: 'timeline.html'
+        templateUrl: 'views/timeline.html'
       })
       .state('home.watchlist', {
         url: 'watchlist',
-        templateUrl: 'watchlist.html'
+        templateUrl: 'views/watchlist.html'
       })
       .state('documentaries', {
         url: '/documentaries',
-        templateUrl: 'documentaries.html'
+        templateUrl: 'views/documentaries.html'
       })
       .state('documentaries.details', {
         url: '/:movie/details',
-        templateUrl: 'details.html'
+        templateUrl: 'views/details.html'
       });
 
     $urlRouterProvider.otherwise('/');
