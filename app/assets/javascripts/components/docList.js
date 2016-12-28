@@ -9,5 +9,5 @@ var docList = {
 };
 
 angular
-  .module('app')
+  .module('dailyDocumentary')
   .component('docList', docList);
