@@ -6,16 +6,16 @@
         url: '/',
         templateUrl: 'home.html'
       })
-      .state('home.profile', {
-        url: 'profile',
+      .state('profile', {
+        url: '/profile',
         templateUrl: 'profile.html'
       })
-      .state('home.timeline', {
-        url: 'timeline',
+      .state('profile.timeline', {
+        url: '/timeline',
         templateUrl: 'timeline.html'
       })
-      .state('home.watchlist', {
-        url: 'watchlist',
+      .state('profile.watchlist', {
+        url: '/watchlist',
         templateUrl: 'watchlist.html'
       })
       .state('documentaries', {
