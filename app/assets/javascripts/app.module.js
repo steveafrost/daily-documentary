@@ -7,15 +7,15 @@
         templateUrl: 'home.html'
       })
       .state('home.profile', {
-        url: '/profile',
+        url: 'profile',
         templateUrl: 'profile.html'
       })
       .state('home.timeline', {
-        url: '/timeline',
+        url: 'timeline',
         templateUrl: 'timeline.html'
       })
       .state('home.watchlist', {
-        url: '/watchlist',
+        url: 'watchlist',
         templateUrl: 'watchlist.html'
       })
       .state('documentaries', {
