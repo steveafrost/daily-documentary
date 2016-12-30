@@ -1,30 +1,30 @@
  angular
-  .module('dailyDocumentary', ['ui.router'])
+  .module('dailyDocumentary', ['ui.router', 'templates'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'views/home.html'
+        templateUrl: 'home.html'
       })
       .state('home.profile', {
-        url: 'profile',
-        templateUrl: 'views/profile.html'
+        url: '/profile',
+        templateUrl: 'profile.html'
       })
       .state('home.timeline', {
-        url: 'timeline',
-        templateUrl: 'views/timeline.html'
+        url: '/timeline',
+        templateUrl: 'timeline.html'
       })
       .state('home.watchlist', {
-        url: 'watchlist',
-        templateUrl: 'views/watchlist.html'
+        url: '/watchlist',
+        templateUrl: 'watchlist.html'
       })
       .state('documentaries', {
         url: '/documentaries',
-        templateUrl: 'views/documentaries.html'
+        templateUrl: 'documentaries.html'
       })
       .state('documentaries.details', {
         url: '/:movie/details',
-        templateUrl: 'views/details.html'
+        templateUrl: 'details.html'
       });
 
     $urlRouterProvider.otherwise('/');

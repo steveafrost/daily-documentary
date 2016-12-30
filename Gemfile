@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# Use Angular Rails Templates to load templates into angular cache
+gem 'angular-rails-templates', '~> 1.0', '>= 1.0.2'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
