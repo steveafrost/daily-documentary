@@ -1,6 +1,6 @@
  angular
   .module('dailyDocumentary', ['ui.router', 'templates'])
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
       .state('home', {
         url: '/',
@@ -28,4 +28,6 @@
       });
 
     $urlRouterProvider.otherwise('/');
+
+    $locationProvider.html5Mode(true);
   });
