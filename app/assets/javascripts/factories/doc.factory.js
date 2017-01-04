@@ -18,5 +18,7 @@
         console.log(response);
       }
 
+      function getDocDetails() {}
+
     }]);
 }());
