@@ -1,7 +1,7 @@
 <div class="container-fluid" ng-controller="DocIndexController as vm">
   <h1>Documentaries</h1>
 
-  <a ui-sref="#" ng-repeat="doc in vm.docList" class="list-group-item list-group-item-action">
+  <button ng-click="vm.getDetails()" ng-repeat="doc in vm.docList" class="list-group-item list-group-item-action">
     <h4 ng-bind="doc.data.title"></h4>
   </a>
 </div>

@@ -7,6 +7,7 @@
       var vm = this;
 
       vm.docList = [];
+      vm.docDetails = DocFactory.getDocDetails();
 
       DocFactory.getDocList()
                 .then(setDocList);
