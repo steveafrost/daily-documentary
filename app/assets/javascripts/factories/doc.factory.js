@@ -15,7 +15,17 @@
       }
 
       function handleResponse(response) {
-        return response.data.data.children;
+        var allDocs = response.data.data.children;
+        var docTitles = [];
+
+        for (var i = 0; i < allDocs.length; i++) {
+          docTitle = allDocs[i].data.title.toString();
+          docTitle = docTitle.substring(0, docTitle.indexOf('('));
+          docTitles.push(docTitle);
+          console.log(docTitle);
+        }
+
+        return docTitles;
       }
 
       function getDocDetails() {}
