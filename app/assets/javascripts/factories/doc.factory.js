@@ -32,8 +32,8 @@
                     .then(handleDetails);
       }
 
-      function handleDetails() {
-
+      function handleDetails(response) {
+        console.log(response);
       }
 
     }]);

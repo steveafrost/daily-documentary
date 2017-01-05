@@ -7,20 +7,19 @@
       var vm = this;
 
       vm.docList = [];
-      vm.docDetails = '';
+      vm.docDetails = DocFactory.getDocDetails()
+                                .then(setDocDetails);
+      vm.docString = '';
 
       DocFactory.getDocList()
                 .then(setDocList);
-
-      DocFactory.getDocDetails(this)
-                .then(setDocDetails);
 
       function setDocList(data) {
         vm.docList = data;
       }
 
       function setDocDetails(data) {
-        vm.docDetails = data;
+        vm.docString = data;
       }
 
     }]);
