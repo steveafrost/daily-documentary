@@ -20,7 +20,7 @@
       })
       .state('documentaries', {
         url: '/documentaries',
-        templateUrl: 'documentaries.html'
+        templateUrl: 'documentaries.html',
       })
       .state('documentaries.details', {
         url: '/:movie/details',

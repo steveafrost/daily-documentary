@@ -1,3 +1,7 @@
 <div class="container-fluid">
-  <h1>Details</h1>
+  <p ng-show="vm.docDetails">
+    <h4 ng-bind="vm.docDetails.Error"></h4>
+    <h4 ng-bind="vm.docDetails.Year"></h4>
+    <p ng-bind="vm.docDetails.Plot"></p>
+  </p>
 </div>
