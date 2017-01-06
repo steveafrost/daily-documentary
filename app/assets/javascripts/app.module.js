@@ -23,7 +23,7 @@
         templateUrl: 'documentaries.html'
       })
       .state('documentaries.details', {
-        url: '/{movie}/details',
+        url: '/:movie/details',
         templateUrl: 'details.html'
       });
 
