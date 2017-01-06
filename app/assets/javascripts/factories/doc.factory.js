@@ -27,13 +27,15 @@
         return docTitles;
       }
 
-      function getDocDetails(doc) {
-        return $http.get('http://www.omdbapi.com/?t=' + doc + '&y=&plot=short&r=json')
+      function getDocDetails(docTitle) {
+        concatTitle = docTitle.replace(/\ /g, "+");
+        console.log(concatTitle);
+        return $http.get('http://www.omdbapi.com/?t=' + concatTitle + '&y=&plot=short&r=json')
                     .then(handleDetails);
       }
 
       function handleDetails(response) {
-        console.log(response);
+        return response.data;
       }
 
     }]);
