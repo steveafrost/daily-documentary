@@ -43,7 +43,7 @@
       }
 
       function handleError(error) {
-        return false;
+        return error;
       }
 
     }

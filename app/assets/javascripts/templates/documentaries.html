@@ -3,9 +3,13 @@
   <p ng-show="vm.test" ng-bind="vm.test"></p>
 
 <div ng-repeat="doc in vm.docList">
-  <button ng-click="vm.getDetails(doc)" class="list-group-item list-group-item-action">
+  <button ng-click="vm.getDetails(doc, $event)" class="list-group-item list-group-item-action">
     <h4 ng-bind="doc"></h4>
-    <p ng-show="vm.docDetails" ng-bind="vm.docDetails"></p>
+    <p ng-show="vm.docDetails">
+      <h4 ng-bind="vm.docDetails.Error"></h4>
+      <h4 ng-bind="vm.docDetails.Year"></h4>
+      <p ng-bind="vm.docDetails.Plot"></p>
+    </p>
   </button>
 </div>
 </div>
