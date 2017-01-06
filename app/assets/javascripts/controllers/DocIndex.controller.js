@@ -2,19 +2,21 @@
 
   angular
     .module('dailyDocumentary')
-    .controller('DocIndexController', ['DocFactory', function(DocFactory) {
+    .controller('DocIndexController', DocIndexController);
+
+    function DocIndexController(docFactory) {
 
       var vm = this;
 
       vm.docList = [];
-      vm.docDetails = DocFactory.getDocDetails;
+      vm.docDetails = docFactory.getDocDetails;
 
-      DocFactory.getDocList()
+      docFactory.getDocList()
                 .then(setDocList);
 
       function setDocList(data) {
         vm.docList = data;
       }
+    }
 
-    }]);
 }());

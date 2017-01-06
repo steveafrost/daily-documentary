@@ -2,7 +2,9 @@
 
   angular
     .module('dailyDocumentary')
-    .factory('DocFactory', ['$http', function($http) {
+    .factory('docFactory', docFactory);
+
+    function docFactory($http) {
 
       return {
         getDocList: getDocList,
@@ -38,5 +40,6 @@
         return response.data;
       }
 
-    }]);
+    }
+
 }());
