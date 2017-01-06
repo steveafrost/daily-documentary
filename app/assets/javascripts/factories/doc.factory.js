@@ -23,8 +23,9 @@
         for (var i = 0; i < allDocs.length; i++) {
           docTitle = allDocs[i].data.title.toString();
           docTitle = docTitle.substring(0, docTitle.indexOf('('));
-          if (docTitle !== "") docTitles.push(docTitle);
+          if (docTitle !== "") docTitles.push({id: [i], title: docTitle});
         }
+        console.log(docTitles);
         return docTitles;
       }
 
