@@ -33,11 +33,17 @@
         concatTitle = docTitle.replace(/\ /g, "+");
         console.log(concatTitle);
         return $http.get('http://www.omdbapi.com/?t=' + concatTitle + '&y=&plot=short&r=json')
-                    .then(handleDetails);
+                    .then(handleDetails)
+                    .catch(handleError);
       }
 
       function handleDetails(response) {
+        console.log(response.data);
         return response.data;
+      }
+
+      function handleError(error) {
+        return false;
       }
 
     }
