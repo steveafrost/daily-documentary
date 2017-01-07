@@ -11,6 +11,7 @@
       vm.currentDoc = '';
       vm.docDetails = {};
       vm.getDetails = function(doc, index) {
+        if (vm.currentDoc === index + 1) return;
         vm.currentDoc = index + 1;
         docFactory.getDocDetails(doc)
                   .then(setDocDetails);
@@ -25,7 +26,6 @@
       }
 
       function setDocDetails(data) {
-        console.log(vm.currentDoc)
         vm.docDetails = data;
       }
     }
