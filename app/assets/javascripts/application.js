@@ -14,6 +14,7 @@
 //= require bootstrap
 //= require angular
 //= require angular-material
+//= require angular-material-icons
 //= require angular-aria
 //= require angular-animate
 //= require angular-ui-router

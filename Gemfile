@@ -37,6 +37,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-angular'
   gem 'rails-assets-angular-material'
+  gem 'rails-assets-angular-material-icons'
   gem 'rails-assets-angular-ui-router'
 end
 

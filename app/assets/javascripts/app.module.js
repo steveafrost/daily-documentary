@@ -1,5 +1,5 @@
  angular
-  .module('dailyDocumentary', ['ui.router', 'templates', 'ngMaterial'])
+  .module('dailyDocumentary', ['ui.router', 'templates', 'ngMaterial', 'ngMdIcons'])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $mdThemingProvider) {
     $stateProvider
       .state('home', {

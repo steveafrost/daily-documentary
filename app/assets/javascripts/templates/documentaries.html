@@ -1,7 +1,4 @@
 <div class="container-fluid" ng-controller="DocIndexController as vm">
-
-  <h1>Documentaries</h1>
-
   <div ng-repeat="doc in vm.docList track by doc.id">
     <div layout="row">
       <md-list-item ng-click="vm.getDetails(doc.title)" ui-sref="documentaries.details({movie: doc})">
