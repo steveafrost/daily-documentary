@@ -1,6 +1,6 @@
  angular
   .module('dailyDocumentary', ['ui.router', 'templates', 'ngMaterial'])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $mdThemingProvider) {
     $stateProvider
       .state('home', {
         url: '/',
@@ -30,4 +30,8 @@
     $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);
+
+    $mdThemingProvider.theme('default')
+      .primaryPalette('deep-purple')
+      .accentPalette('deep-purple');
   });
