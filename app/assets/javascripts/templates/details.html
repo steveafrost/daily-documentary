@@ -1,12 +1,17 @@
-<div class="container-fluid">
+<div flex="90" flex-offset="5">
   <div ng-if="vm.currentDoc === doc.id[0]">
-    <h4 ng-bind="vm.docDetails.Error"></h4>
-    <h4 ng-bind="vm.docDetails.Year"></h4>
-    <p ng-bind="vm.docDetails.Runtime"></p>
-    <p ng-bind="vm.docDetails.Actors"></p>
-    <p ng-bind="vm.docDetails.Plot"></p>
-    <p ng-bind="vm.docDetails.imdbRating"></p>
-    <p ng-bind="vm.docDetails.Awards"></p>
-    <p>{{vm.docDetails | json }}</p>
+  <div layout="row">
+    <div layout="column">
+      <md-card>
+        <img ng-src="{{vm.docDetails.Poster}}">
+      </md-card>
+    </div>
+    <div layout="column" class="md-subhead">
+      <h4 ng-bind="vm.docDetails.Error"></h4>
+      <p ng-bind="'Actors: ' + vm.docDetails.Actors"></p>
+      <p ng-bind="'Plot: ' + vm.docDetails.Plot"></p>
+      <p ng-bind="'Rating: ' + vm.docDetails.imdbRating"></p>
+      <p ng-bind="'Awards: ' + vm.docDetails.Awards"></p>
+    </div>
   </div>
 </div>
