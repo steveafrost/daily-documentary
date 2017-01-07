@@ -2,8 +2,11 @@
   <div ng-if="vm.currentDoc === doc.id[0]">
     <h4 ng-bind="vm.docDetails.Error"></h4>
     <h4 ng-bind="vm.docDetails.Year"></h4>
+    <p ng-bind="vm.docDetails.Runtime"></p>
+    <p ng-bind="vm.docDetails.Actors"></p>
     <p ng-bind="vm.docDetails.Plot"></p>
-    <ng-md-icon icon="done"></ng-md-icon>
-    <ng-md-icon icon="watch_later"></ng-md-icon>
+    <p ng-bind="vm.docDetails.imdbRating"></p>
+    <p ng-bind="vm.docDetails.Awards"></p>
+    <p>{{vm.docDetails | json }}</p>
   </div>
 </div>
