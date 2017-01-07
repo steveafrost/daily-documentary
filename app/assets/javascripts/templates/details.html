@@ -1,7 +1,9 @@
 <div class="container-fluid">
-  <p ng-show="vm.docDetails">
+  <p ng-if="vm.docDetails">
     <h4 ng-bind="vm.docDetails.Error"></h4>
     <h4 ng-bind="vm.docDetails.Year"></h4>
     <p ng-bind="vm.docDetails.Plot"></p>
+    <ng-md-icon icon="done"></ng-md-icon>
+    <ng-md-icon icon="watch_later"></ng-md-icon>
   </p>
 </div>
