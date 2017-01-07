@@ -25,7 +25,6 @@
           docTitle = docTitle.substring(0, docTitle.indexOf('('));
           if (docTitle !== "") docTitles.push({id: [i], title: docTitle});
         }
-        console.log(docTitles);
         return docTitles;
       }
 

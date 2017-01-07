@@ -3,10 +3,14 @@
   <h1>Documentaries</h1>
 
   <div ng-repeat="doc in vm.docList track by doc.id">
-    <button ng-click="vm.getDetails(doc.title)" ui-sref="documentaries.details({movie: doc})" class="list-group-item list-group-item-action">
-      <h4 ng-bind="doc.title" data-id="{{vm.docList.indexOf(doc)}}"></h4>
+    <div layout="row">
+      <md-list-item ng-click="vm.getDetails(doc.title)" ui-sref="documentaries.details({movie: doc})">
+        <h4 ng-bind="doc.title" data-id="{{vm.docList.indexOf(doc)}}"></h4>
+      </md-list-item>
+    </div>
+    <div layout="row">
       <ui-view></ui-view>
-    </button>
+    </div>
   </div>
 
 </div>

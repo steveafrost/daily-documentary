@@ -8,7 +8,7 @@
 
       var vm = this;
       vm.docList = [];
-      vm.docDetails = '';
+      vm.docDetails = {};
       vm.getDetails = function(doc) {
         docFactory.getDocDetails(doc)
                   .then(setDocDetails);
