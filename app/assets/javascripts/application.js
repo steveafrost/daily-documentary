@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap
 //= require angular
+//= require angular-material
 //= require angular-ui-router
 //= require angular-rails-templates
 //= require_tree ./templates

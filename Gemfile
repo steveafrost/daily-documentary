@@ -35,6 +35,7 @@ gem 'angular-rails-templates', '~> 1.0', '>= 1.0.2'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
+  gem 'rails-assets-angular-material'
   gem 'rails-assets-angular'
   gem 'rails-assets-angular-ui-router'
 end
