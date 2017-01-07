@@ -8,10 +8,10 @@
 
       var vm = this;
       vm.docList = [];
-      vm.currentDoc = '';
+      vm.currentDoc = false;
       vm.docDetails = {};
       vm.getDetails = function(doc, index) {
-        if (vm.currentDoc === index + 1) return;
+        if (vm.currentDoc === index + 1) return vm.docDetails = {};
         vm.currentDoc = index + 1;
         docFactory.getDocDetails(doc)
                   .then(setDocDetails);
