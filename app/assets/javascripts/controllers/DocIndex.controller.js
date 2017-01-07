@@ -8,11 +8,14 @@
 
       var vm = this;
       vm.docList = [];
+      vm.currentDoc = '';
       vm.docDetails = {};
-      vm.getDetails = function(doc) {
+      vm.getDetails = function(doc, index) {
+        vm.currentDoc = index + 1;
         docFactory.getDocDetails(doc)
                   .then(setDocDetails);
       };
+
 
       docFactory.getDocList()
                 .then(setDocList);
@@ -22,6 +25,7 @@
       }
 
       function setDocDetails(data) {
+        console.log(vm.currentDoc)
         vm.docDetails = data;
       }
     }

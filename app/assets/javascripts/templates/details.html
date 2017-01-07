@@ -1,9 +1,9 @@
 <div class="container-fluid">
-  <p ng-if="vm.docDetails">
+  <div ng-if="vm.currentDoc === doc.id[0]">
     <h4 ng-bind="vm.docDetails.Error"></h4>
     <h4 ng-bind="vm.docDetails.Year"></h4>
     <p ng-bind="vm.docDetails.Plot"></p>
     <ng-md-icon icon="done"></ng-md-icon>
     <ng-md-icon icon="watch_later"></ng-md-icon>
-  </p>
+  </div>
 </div>

@@ -8,7 +8,7 @@
 
       return {
         getDocList: getDocList,
-        getDocDetails: getDocDetails
+        getDocDetails: getDocDetails,
       };
 
       function getDocList() {
@@ -37,7 +37,6 @@
       }
 
       function handleDetails(response) {
-        console.log(response.data);
         return response.data;
       }
 
