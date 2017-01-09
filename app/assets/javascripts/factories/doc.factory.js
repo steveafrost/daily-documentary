@@ -30,7 +30,6 @@
 
       function getDocDetails(docTitle) {
         concatTitle = docTitle.replace(/\ /g, "+");
-        console.log(concatTitle);
         return $http.get('http://www.omdbapi.com/?t=' + concatTitle + '&y=&plot=short&r=json')
                     .then(handleDetails)
                     .catch(handleError);
