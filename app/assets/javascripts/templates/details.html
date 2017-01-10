@@ -3,15 +3,24 @@
   <div layout="row">
     <div layout="column">
       <md-card>
-        <img ng-src="{{vm.docDetails.Poster}}">
+        <md-card-title>
+          <md-card-title-media>
+            <div class="md-media-md card-media"><img ng-src="{{vm.docDetails.Poster}}"></div>
+          </md-card-title-media>
+          <md-card-title-text>
+            <h4 ng-bind="vm.docDetails.Error"></h4>
+            <p ng-bind="'Actors: ' + vm.docDetails.Actors"></p>
+            <p ng-bind="'Plot: ' + vm.docDetails.Plot"></p>
+            <p ng-bind="'Rating: ' + vm.docDetails.imdbRating"></p>
+            <p ng-bind="'Awards: ' + vm.docDetails.Awards"></p>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button><ng-md-icon icon="tv"></md-icon></md-button>
+          <md-button><ng-md-icon icon="done"></md-icon></md-button>
+          <md-button><ng-md-icon icon="watch_later"></md-button>
+        </md-card-actions>
       </md-card>
-    </div>
-    <div layout="column" class="md-subhead">
-      <h4 ng-bind="vm.docDetails.Error"></h4>
-      <p ng-bind="'Actors: ' + vm.docDetails.Actors"></p>
-      <p ng-bind="'Plot: ' + vm.docDetails.Plot"></p>
-      <p ng-bind="'Rating: ' + vm.docDetails.imdbRating"></p>
-      <p ng-bind="'Awards: ' + vm.docDetails.Awards"></p>
     </div>
   </div>
 </div>
