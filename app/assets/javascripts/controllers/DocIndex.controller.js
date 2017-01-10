@@ -16,6 +16,9 @@
         docFactory.getDocDetails(doc)
                   .then(setDocDetails);
       };
+      vm.docWatched = function(docTitle) {
+        docFactory.docWatched(docTitle);
+      };
 
 
       docFactory.getDocList()

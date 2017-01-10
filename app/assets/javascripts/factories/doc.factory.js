@@ -9,6 +9,7 @@
       return {
         getDocList: getDocList,
         getDocDetails: getDocDetails,
+        docWatched: docWatched
       };
 
       function getDocList() {
@@ -42,6 +43,10 @@
 
       function handleError(error) {
         return error;
+      }
+
+      function docWatched(title) {
+        console.log(title);
       }
 
     }
