@@ -47,6 +47,17 @@
 
       function docWatched(title) {
         console.log(title);
+        var data = $.param({
+          json: JSON.stringify({
+            title: title,
+            timeline: true,
+            watchlist: false
+          })
+        });
+
+        $http.post("/api/movies", data).then(function(data, status) {
+            console.log(data);
+        });
       }
 
     }

@@ -1,4 +1,4 @@
-class MoviesController < ApplicationController
+class API::MoviesController < ApplicationController
 
   def index
     movies = Movies.all
@@ -6,7 +6,8 @@ class MoviesController < ApplicationController
   end
 
   def create
-    Movies.create(movie_params)
+    movie = Movies.create(movie_params)
+    render json: movie
   end
 
   def update
