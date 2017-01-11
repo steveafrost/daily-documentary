@@ -47,15 +47,19 @@
 
       function docWatched(title) {
         console.log(title);
-        var data = $.param({
-          json: JSON.stringify({
-            title: title,
-            timeline: true,
-            watchlist: false
-          })
-        });
+        var data = $.param({"movie":{
+            "title": title,
+            "timeline": true,
+            "watchlist": false
+        }});
 
-        $http.post("/api/movies", data).then(function(data, status) {
+        var config = {
+          headers : {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+          }
+        };
+
+        $http.post("/api/movies", data, config).then(function(data, status, config) {
             console.log(data);
         });
       }
