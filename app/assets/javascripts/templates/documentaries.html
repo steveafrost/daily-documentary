@@ -6,8 +6,13 @@
       <div flex></div>
       <div ng-if="vm.currentDoc === doc.id[0]">
         <h4>
-          <span ng-bind="'Year: ' + vm.docDetails.Year"></span> |
-          <span ng-bind="'Runtime: ' + vm.docDetails.Runtime"></span>
+          <div ng-if="vm.docDetails.Error == 'Movie not found!'">
+            <span ng-bind="vm.docDetails.Error"></span>
+          </div>
+          <div ng-if="vm.docDetails.Error != 'Movie not found!'">
+            <span ng-bind="'Year: ' + vm.docDetails.Year"></span> |
+            <span ng-bind="'Runtime: ' + vm.docDetails.Runtime"></span>
+          </div>
         </h4>
       </div>
     </md-list-item>
