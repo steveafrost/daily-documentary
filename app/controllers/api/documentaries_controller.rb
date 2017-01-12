@@ -6,7 +6,7 @@ class API::DocumentariesController < ApplicationController
   end
 
   def create
-    documentary = Documentary.create(documentary_params)
+    documentary = Documentary.find_or_create(documentary_params)
     render json: documentary
   end
 
