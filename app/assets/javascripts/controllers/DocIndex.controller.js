@@ -16,10 +16,12 @@
         docFactory.getDocDetails(doc)
                   .then(setDocDetails);
       };
-      vm.docWatched = function(docTitle) {
-        docFactory.docWatched(docTitle);
+      vm.addToTimeline = function(docTitle) {
+        docFactory.addToTimeline(docTitle);
       };
-
+      vm.addToWatchlist = function(docTitle) {
+        docFactory.addToWatchlist(docTitle);
+      };
 
       docFactory.getDocList()
                 .then(setDocList);
