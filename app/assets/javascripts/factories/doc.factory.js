@@ -9,7 +9,7 @@
       return {
         getDocList: getDocList,
         getDocDetails: getDocDetails,
-        docWatched: docWatched
+        addDocToTimeline: addDocToTimeline
       };
 
       function getDocList() {
@@ -45,8 +45,7 @@
         return error;
       }
 
-      function docWatched(title) {
-        console.log(title);
+      function addDocToTimeline(title) {
         var data = $.param({"documentary":{
             "title": title,
             "timeline": true,
