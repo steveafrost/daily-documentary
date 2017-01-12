@@ -8,7 +8,7 @@
       })
       .state('profile', {
         url: '/profile',
-        templateUrl: 'profile.html'
+        templateUrl: 'profile.html',
       })
       .state('profile.timeline', {
         url: '/timeline',

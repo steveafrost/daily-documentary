@@ -12,13 +12,13 @@
       };
 
       function getTimeline() {
-        return $http.get('/api/documentaries')
+        return $http.get('/api/timeline')
                     .then(handleResponse)
                     .catch(handleError);
       }
 
       function getWatchlist() {
-        return $http.get('/api/documentaries')
+        return $http.get('/api/watchlist')
                     .then(handleResponse)
                     .catch(handleError);
       }
