@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'application#landing'
 
   namespace :api do
-    resources :movies
+    resources :documentaries
   end
 
   get '*unmatched_route', :to => 'application#landing'

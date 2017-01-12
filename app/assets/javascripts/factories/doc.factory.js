@@ -47,7 +47,7 @@
 
       function docWatched(title) {
         console.log(title);
-        var data = $.param({"movie":{
+        var data = $.param({"documentary":{
             "title": title,
             "timeline": true,
             "watchlist": false
@@ -59,7 +59,7 @@
           }
         };
 
-        $http.post("/api/movies", data, config).then(function(data, status, config) {
+        $http.post("/api/documentaries", data, config).then(function(data, status, config) {
             console.log(data);
         });
       }
