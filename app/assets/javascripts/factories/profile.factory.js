@@ -13,20 +13,24 @@
 
       function getTimeline($http) {
         return $http.get('/api/documentaries')
-                    .then(handleTimeline);
-      }
-
-      function handleTimeline(response) {
-        console.log(response);
+                    .then(handleResponse)
+                    .catch(handleError);
       }
 
       function getWatchlist($http) {
         return $http.get('/api/documentaries')
-                    .then(handleWatchlist);
+                    .then(handleResponse)
+                    .catch(handleError);
       }
 
-      function handleWatchlist(response) {
+      function handleResponse(response) {
         console.log(response);
+        return response;
+      }
+
+      function handleError(error) {
+        console.log(error);
+        return error;
       }
 
     }
