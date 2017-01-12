@@ -1,3 +1,11 @@
-<div class="container-fluid">
-  <h2>Watchlist</h2>
+<div flex="90" flex-offset="5">
+  <div layout="row" ng-repeat="doc in vm.watchlist">
+    <div layout="column">
+      <md-card>
+        <md-card-title>
+          <h4 ng-bind="doc.title"></h4>
+        </md-card-title>
+      </md-card>
+    </div>
+  </div>
 </div>

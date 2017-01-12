@@ -24,8 +24,8 @@
       }
 
       function handleResponse(response) {
-        console.log(response);
-        return response;
+        console.log(response.data);
+        return response.data;
       }
 
       function handleError(error) {
