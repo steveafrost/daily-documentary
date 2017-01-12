@@ -7,8 +7,8 @@
     function profileFactory($http) {
 
       return {
-        getTimeline: getTimeline,
-        getWatchlist: getWatchlist
+        getTimeline: getTimeline(),
+        getWatchlist: getWatchlist()
       };
 
       function getTimeline() {
@@ -24,8 +24,8 @@
       }
 
       function handleResponse(response) {
-        console.log(response.data);
-        return response.data;
+        console.log(response);
+        return response;
       }
 
       function handleError(error) {

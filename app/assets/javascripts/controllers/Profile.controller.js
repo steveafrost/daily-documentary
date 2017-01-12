@@ -7,8 +7,16 @@ angular.module('dailyDocumentary')
     var vm = this;
 
     vm.hello = "Hello, Steve";
-    vm.timeline = profileFactory.getTimeline();
-    vm.watchlist = profileFactory.getWatchlist();
+    vm.timeline = false;
+    vm.watchlist = false;
+
+    profileFactory.getTimeline.then(function(response) {
+      vm.timeline = response.data;
+    });
+
+    profileFactory.getWatchlist.then(function(response) {
+      vm.watchlist = response.data;
+    });
   }
 
 }());
