@@ -11,13 +11,13 @@
         getWatchlist: getWatchlist
       };
 
-      function getTimeline($http) {
+      function getTimeline() {
         return $http.get('/api/documentaries')
                     .then(handleResponse)
                     .catch(handleError);
       }
 
-      function getWatchlist($http) {
+      function getWatchlist() {
         return $http.get('/api/documentaries')
                     .then(handleResponse)
                     .catch(handleError);
