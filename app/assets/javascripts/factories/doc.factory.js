@@ -47,7 +47,6 @@
       }
 
       function addToTimeline(title) {
-        console.log(title)
         var data = $.param({"documentary":{
             "title": title,
             "timeline": true,
@@ -61,16 +60,11 @@
         };
 
         $http.post("/api/documentaries", data, config).then(function(data, status, config) {
-        console.log(data);
+          console.log(data);
         });
-        // use to debug API call
-        // .then(function(data, status, config) {
-        //     console.log(data);
-        // });
       }
 
       function addToWatchlist(title) {
-        console.log(title)
         var data = $.param({"documentary":{
             "title": title,
             "timeline": false,
@@ -84,10 +78,8 @@
         };
 
         $http.post("/api/documentaries", data, config).then(function(data, status, config) {
-        console.log(data);
+          console.log(data);
         });
       }
-
     }
-
 }());
