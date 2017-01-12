@@ -1,9 +1,9 @@
 (function() {
 
 angular.module('app')
-       .controller('Profile', Profile);
+       .controller('ProfileController', ProfileController);
 
-  function Profile(profileFactory) {
+  function ProfileController(profileFactory) {
     var vm = this;
 
     vm.timeline = profileFactory.getTimeline();
