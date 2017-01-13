@@ -15,11 +15,6 @@
       vm.getDetails = getDetails;
       vm.getDocList = getDocList();
 
-      function getDocList() {
-        docFactory.getDocList()
-                  .then(setDocList);
-      }
-
       function addToTimeline(docTitle) {
         docFactory.addToTimeline(docTitle);
       }
@@ -36,6 +31,11 @@
           docFactory.getDocDetails(doc)
                     .then(setDocDetails);
         }
+      }
+
+      function getDocList() {
+        docFactory.getDocList()
+                  .then(setDocList);
       }
 
       function setDocDetails(data) {
