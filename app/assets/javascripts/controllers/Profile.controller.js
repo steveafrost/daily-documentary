@@ -7,8 +7,8 @@ angular.module('dailyDocumentary')
     var vm = this;
 
     vm.hello = "Hello, Steve";
-    vm.timeline = false;
-    vm.watchlist = false;
+    vm.timeline = [];
+    vm.watchlist = [];
 
     profileFactory.getTimeline.then(function(response) {
       vm.timeline = response.data;

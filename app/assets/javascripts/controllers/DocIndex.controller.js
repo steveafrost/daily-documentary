@@ -10,29 +10,39 @@
       vm.docList = [];
       vm.currentDoc = false;
       vm.docDetails = {};
-      vm.getDetails = function(doc, index) {
-        if (vm.currentDoc === index + 1) return vm.currentDoc = false;
-        vm.currentDoc = index + 1;
-        docFactory.getDocDetails(doc)
-                  .then(setDocDetails);
-      };
-      vm.addToTimeline = function(docTitle) {
-        docFactory.addToTimeline(docTitle);
-      };
-      vm.addToWatchlist = function(docTitle) {
-        docFactory.addToWatchlist(docTitle);
-      };
+      vm.getDetails = getDetails;
+      vm.addToTimeline = addToTimeline;
+      vm.addToWatchlist = addToWatchlist;
 
       docFactory.getDocList()
                 .then(setDocList);
 
-      function setDocList(data) {
-        vm.docList = data;
+      function addToTimeline(docTitle) {
+        docFactory.addToTimeline(docTitle);
+      }
+
+      function addToWatchlist(docTitle) {
+        docFactory.addToWatchlist(docTitle);
+      }
+
+      function getDetails(doc, index) {
+        if (vm.currentDoc === index + 2) {
+          vm.currentDoc = false;
+        } else {
+          vm.currentDoc = index + 2; //fix numbering before launch
+          docFactory.getDocDetails(doc)
+                    .then(setDocDetails);
+        }
       }
 
       function setDocDetails(data) {
         vm.docDetails = data;
       }
+
+      function setDocList(data) {
+        vm.docList = data;
+      }
+
     }
 
 }());
