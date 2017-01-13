@@ -7,15 +7,18 @@
     function DocIndexController(docFactory) {
 
       var vm = this;
-      vm.docList = [];
-      vm.currentDoc = false;
-      vm.docDetails = {};
-      vm.getDetails = getDetails;
       vm.addToTimeline = addToTimeline;
       vm.addToWatchlist = addToWatchlist;
+      vm.currentDoc = false;
+      vm.docDetails = {};
+      vm.docList = [];
+      vm.getDetails = getDetails;
+      vm.getDocList = getDocList();
 
-      docFactory.getDocList()
-                .then(setDocList);
+      function getDocList() {
+        docFactory.getDocList()
+                  .then(setDocList);
+      }
 
       function addToTimeline(docTitle) {
         docFactory.addToTimeline(docTitle);
