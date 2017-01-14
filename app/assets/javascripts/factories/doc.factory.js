@@ -16,19 +16,6 @@
                     .then(handleList);
       }
 
-      function handleList(response) {
-        var allDocs = response.data.data.children;
-        var docList = [];
-
-        for (var i = 0; i < allDocs.length; i++) {
-          docTitle = allDocs[i].data.title.toString();
-          docUrl = allDocs[i].data.url.toString();
-          docTitle = docTitle.substring(0, docTitle.indexOf(' ('));
-          if (docTitle !== "") docList.push({id: [i], title: docTitle, url: docUrl});
-        }
-        return docList;
-      }
-
       function getDocDetails(docTitle) {
         concatTitle = docTitle.replace(/\ /g, "+");
         return $http.get('http://www.omdbapi.com/?t=' + concatTitle + '&y=&plot=short&r=json')
@@ -43,6 +30,23 @@
       function handleError(error) {
         return error;
       }
+
+      function handleList(response) {
+        var allDocs = response.data.data.children;
+        var docList = [];
+
+        for (var i = 0; i < allDocs.length; i++) {
+          docTitle = allDocs[i].data.title.toString();
+          docUrl = allDocs[i].data.url.toString();
+          docTitle = docTitle.substring(0, docTitle.indexOf(' ('));
+          if (docTitle !== "") docList.push({id: [i], title: docTitle, url: docUrl});
+        }
+        return docList;
+      }
+
+
+
+
 
     }
 }());
