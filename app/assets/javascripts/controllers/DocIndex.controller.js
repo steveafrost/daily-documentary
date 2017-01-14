@@ -4,7 +4,7 @@
     .module('dailyDocumentary')
     .controller('DocIndexController', DocIndexController);
 
-    function DocIndexController(docFactory) {
+    function DocIndexController(docFactory, profileFactory) {
 
       var vm = this;
       vm.addToTimeline = addToTimeline;
@@ -16,11 +16,11 @@
       vm.getDocList = getDocList();
 
       function addToTimeline(docTitle) {
-        docFactory.addToTimeline(docTitle);
+        profileFactory.addToTimeline(docTitle);
       }
 
       function addToWatchlist(docTitle) {
-        docFactory.addToWatchlist(docTitle);
+        profileFactory.addToWatchlist(docTitle);
       }
 
       function getDetails(doc, index) {

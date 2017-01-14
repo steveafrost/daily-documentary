@@ -8,9 +8,7 @@
 
       return {
         getDocList: getDocList,
-        getDocDetails: getDocDetails,
-        addToTimeline: addToTimeline,
-        addToWatchlist: addToWatchlist
+        getDocDetails: getDocDetails
       };
 
       function getDocList() {
@@ -46,45 +44,5 @@
         return error;
       }
 
-      function addToTimeline(title) {
-        var data = $.param({"documentary":{
-            "title": title,
-            "timeline": true,
-            "watchlist": false
-        }});
-
-        var config = {
-          headers : {
-            'Profile-Type': 'timeline',
-            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-          }
-        };
-
-        $http.post("/api/documentaries", data, config).then(function(data, status, config) {
-          console.log(data);
-          return data;
-        });
-      }
-
-      function addToWatchlist(title) {
-        var data = $.param({"documentary":{
-            "title": title,
-            "timeline": false,
-            "watchlist": true
-        }});
-
-        var config = {
-          headers : {
-            'Profile-Type': 'watchlist',
-            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-          }
-        };
-
-        $http.post("/api/documentaries", data, config).then(function(data, status, config) {
-          console.log(config);
-          console.log(data);
-          return data;
-        });
-      }
     }
 }());
