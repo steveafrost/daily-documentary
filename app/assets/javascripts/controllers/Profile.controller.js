@@ -7,8 +7,8 @@ angular.module('dailyDocumentary')
     var vm = this;
 
     vm.hello = "Hello, Steve";
-    vm.timeline = [];
-    vm.watchlist = [];
+    vm.timeline = profileFactory.timeline;
+    vm.watchlist = profileFactory.watchlist;
 
     profileFactory.getTimeline.then(function(response) {
       vm.timeline = response.data;
@@ -17,6 +17,7 @@ angular.module('dailyDocumentary')
     profileFactory.getWatchlist.then(function(response) {
       vm.watchlist = response.data;
     });
+
   }
 
 }());

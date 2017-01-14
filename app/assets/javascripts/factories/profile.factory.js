@@ -10,7 +10,9 @@
         addToTimeline: addToTimeline,
         addToWatchlist: addToWatchlist,
         getTimeline: getTimeline(),
-        getWatchlist: getWatchlist()
+        getWatchlist: getWatchlist(),
+        timeline: [],
+        watchlist: []
       };
 
       function addToTimeline(title) {
@@ -28,8 +30,8 @@
         };
 
         $http.post("/api/documentaries", data, config).then(function(response, status, config) {
-          console.log(response);
-          return response;
+          console.log(response.data);
+          timeline = response.data;
         });
       }
 
@@ -48,8 +50,8 @@
         };
 
         $http.post("/api/documentaries", data, config).then(function(response, status, config) {
-          console.log(response);
-          return response;
+          console.log(response.data);
+          watchlist = response.data;
         });
       }
 
