@@ -24,10 +24,10 @@
       }
 
       function getDetails(doc, index) {
-        if (vm.currentDoc === index + 2) {
+        if (vm.currentDoc === index) {
           vm.currentDoc = false;
         } else {
-          vm.currentDoc = index + 2; //fix numbering before launch
+          vm.currentDoc = index; //fix numbering before launch
           docFactory.getDocDetails(doc)
                     .then(setDocDetails);
         }

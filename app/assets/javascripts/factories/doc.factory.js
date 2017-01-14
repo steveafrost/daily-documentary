@@ -38,7 +38,6 @@
         for (var i = 0; i < allDocs.length; i++) {
           docTitle = allDocs[i].data.title.toString();
           docUrl = allDocs[i].data.url.toString();
-          docTitle = docTitle.substring(0, docTitle.indexOf(' ('));
           if (docTitle !== "") docList.push({id: [i], title: docTitle, url: docUrl});
         }
         return docList;
