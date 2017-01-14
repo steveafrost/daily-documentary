@@ -6,9 +6,6 @@
       <div flex></div>
       <div ng-if="vm.currentDoc === doc.id[0]">
         <h4>
-          <div ng-if="vm.docDetails.Error == 'Movie not found!'">
-            <span ng-bind="vm.docDetails.Error"></span>
-          </div>
           <div ng-if="vm.docDetails.Error != 'Movie not found!'">
             <span ng-bind="'Year: ' + vm.docDetails.Year"></span> |
             <span ng-bind="'Runtime: ' + vm.docDetails.Runtime"></span>
