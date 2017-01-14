@@ -6,8 +6,12 @@ class API::DocumentariesController < ApplicationController
   end
 
   def create
-    documentary = Documentary.find_or_create(documentary_params)
-    render json: documentary
+    Documentary.find_or_create(documentary_params)
+    if request.headers["Profile-Type"] == "watchlist"
+      render json: Documentary.where(watchlist: true)
+    else
+      render json: Documentary.where(timeline: true)
+    end
   end
 
   def update

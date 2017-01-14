@@ -55,12 +55,14 @@
 
         var config = {
           headers : {
+            'Profile-Type': 'timeline',
             'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
           }
         };
 
         $http.post("/api/documentaries", data, config).then(function(data, status, config) {
           console.log(data);
+          return data;
         });
       }
 
@@ -73,12 +75,15 @@
 
         var config = {
           headers : {
+            'Profile-Type': 'watchlist',
             'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
           }
         };
 
         $http.post("/api/documentaries", data, config).then(function(data, status, config) {
+          console.log(config);
           console.log(data);
+          return data;
         });
       }
     }
