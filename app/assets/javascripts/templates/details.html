@@ -4,7 +4,7 @@
     <div layout="column">
       <md-card>
 
-        <!-- Card Title If There Is Not An Error" -->
+        <!-- Card Title if API has success" -->
         <md-card-title ng-show="!vm.docDetails.Error">
           <md-card-title-media>
             <div class="md-media-md card-media"><img ng-src="{{vm.docDetails.Poster}}"></div>
@@ -17,7 +17,7 @@
           </md-card-title-text>
         </md-card-title>
 
-        <!-- Card Title If There's An Error" -->
+        <!-- Card Title if API has error" -->
         <md-card-title ng-show="!!vm.docDetails.Error">
           <md-card-title-text>
             <h4 ng-bind="vm.docDetails.Error"></h4>
