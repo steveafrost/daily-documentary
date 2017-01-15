@@ -3,7 +3,7 @@
 angular.module('dailyDocumentary')
        .controller('ProfileController', ProfileController);
 
-  function ProfileController(profileFactory) {
+  function ProfileController(profileFactory, $scope) {
     var vm = this;
 
     vm.hello = "Hello, Steve";

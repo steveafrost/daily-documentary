@@ -30,8 +30,7 @@
         };
 
         $http.post("/api/documentaries", data, config).then(function(response, status, config) {
-          console.log(response.data);
-          timeline = response.data;
+          angular.copy(response.data, profileFactory.timeline);
         });
       }
 
@@ -50,8 +49,7 @@
         };
 
         $http.post("/api/documentaries", data, config).then(function(response, status, config) {
-          console.log(response.data);
-          watchlist = response.data;
+          angular.copy(response.data, profileFactory.watchlist);
         });
       }
 
