@@ -27,7 +27,7 @@
         if (vm.currentDoc === index) {
           vm.currentDoc = false;
         } else {
-          vm.currentDoc = index; //fix numbering before launch
+          vm.currentDoc = index;
           docFactory.getDocDetails(doc)
                     .then(setDocDetails);
         }

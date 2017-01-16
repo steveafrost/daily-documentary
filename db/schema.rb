@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 20170112021122) do
 
   create_table "documentaries", force: :cascade do |t|
     t.string  "title"
+    t.integer "views"
     t.boolean "timeline"
     t.boolean "watchlist"
   end

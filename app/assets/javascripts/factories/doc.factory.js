@@ -35,11 +35,14 @@
         var allDocs = response.data.data.children;
         var docList = [];
 
-        for (var i = 0; i < allDocs.length; i++) {
-          docTitle = allDocs[i].data.title.toString();
-          docUrl = allDocs[i].data.url.toString();
-          if (docTitle !== "") docList.push({id: [i], title: docTitle, url: docUrl});
-        }
+        allDocs.forEach(function(element, index) {
+          docInfo = element.data;
+          docTitle = docInfo.title.substring(0, docInfo.title.indexOf('('));
+          docUrl = docInfo.url;
+          if (docTitle !== "") {
+            docList.push({id: index, title: docTitle, url: docUrl});
+          }
+        });
         return docList;
       }
 
