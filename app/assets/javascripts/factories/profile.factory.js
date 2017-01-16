@@ -38,23 +38,28 @@
       }
 
       function addToWatchlist(title) {
-        var data = $.param({"documentary":{
-            "title": title,
-            "timeline": false,
-            "watchlist": true
-        }});
-
-        var config = {
-          headers : {
+        var req = {
+          method: 'POST',
+          url: '/api/documentaries',
+          headers: {
             'Profile-Type': 'watchlist',
-            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+            'Content-Type': 'application/json'
+          },
+          data: {
+            "documentary":{
+              "title": title,
+              "timeline": false,
+              "watchlist": true
+            }
           }
         };
 
-        $http.post("/api/documentaries", data, config).then(function(response) {
-          console.log(data + 'added to watchlist');
-          angular.copy(response.data, profileFactory.watchlist);
-        });
+        return $http(req)
+                    .then(updateWatchlist);
+
+        function updateWatchlist(response) {
+          profileFactory.watchlist = response.data;
+        }
       }
 
       function getTimeline() {
