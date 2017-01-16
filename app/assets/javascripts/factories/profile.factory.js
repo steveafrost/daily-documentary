@@ -17,24 +17,28 @@
       };
 
       function addToTimeline(title) {
-        var data = $.param({"documentary":{
-            "title": title,
-            "timeline": true,
-            "watchlist": false
-        }});
-
-        var config = {
-          headers : {
+        var req = {
+          method: 'POST',
+          url: '/api/documentaries',
+          headers: {
             'Profile-Type': 'timeline',
-            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+            'Content-Type': 'application/json'
+          },
+          data: {
+            "documentary":{
+              "title": title,
+              "timeline": true,
+              "watchlist": false
+            }
           }
         };
 
-        $http.post("/api/documentaries", data, config).then(function(response) {
-          console.log(data + 'added to timeline');
-          console.log('rails responded with' + response.data);
-          angular.copy(response.data, profileFactory.timeline);
-        });
+        return $http(req)
+                    .then(updateTimeline);
+
+        function updateTimeline(response) {
+          profileFactory.timeline = response.data;
+        }
       }
 
       function addToWatchlist(title) {
