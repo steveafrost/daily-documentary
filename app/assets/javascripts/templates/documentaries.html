@@ -1,4 +1,4 @@
-<div ng-controller="DocIndexController as vm">
+<div>
   <br>
   <md-list ng-repeat="doc in vm.docList track by doc.id">
     <md-list-item ng-click="vm.getDetails(doc)" ui-sref="documentaries.details({movie: doc.title})">

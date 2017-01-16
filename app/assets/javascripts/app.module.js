@@ -6,9 +6,21 @@
         url: '/',
         templateUrl: 'home.html'
       })
+      .state('documentaries', {
+        url: '/documentaries',
+        templateUrl: 'documentaries.html',
+        controller: 'DocIndexController',
+        controllerAs: 'vm'
+      })
+      .state('documentaries.details', {
+        url: '/:movie/details',
+        templateUrl: 'details.html'
+      })
       .state('profile', {
         url: '/profile',
         templateUrl: 'profile.html',
+        controller: 'ProfileController',
+        controllerAs: 'vm'
       })
       .state('profile.timeline', {
         url: '/timeline',
@@ -17,14 +29,6 @@
       .state('profile.watchlist', {
         url: '/watchlist',
         templateUrl: 'watchlist.html'
-      })
-      .state('documentaries', {
-        url: '/documentaries',
-        templateUrl: 'documentaries.html'
-      })
-      .state('documentaries.details', {
-        url: '/:movie/details',
-        templateUrl: 'details.html'
       });
 
     $urlRouterProvider.otherwise('/');
