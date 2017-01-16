@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="dailyDocumentary">
   <head>
     <title>DailyDocumentary</title>
     <%= csrf_meta_tags %>
@@ -9,7 +9,7 @@
     <base href="/">
   </head>
 
-  <body ng-app="dailyDocumentary">
+  <body>
     <%= render 'layouts/navigation.html' %>
     <div flex="80" flex-offset="10">
       <ui-view></ui-view>

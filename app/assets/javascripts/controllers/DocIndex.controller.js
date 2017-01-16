@@ -5,7 +5,7 @@
     .module('dailyDocumentary')
     .controller('DocIndexController', DocIndexController);
 
-    function DocIndexController(docFactory, profileFactory) {
+    function DocIndexController(docFactory, profileFactory, $mdToast) {
 
       var vm = this;
       vm.addToTimeline = addToTimeline;
@@ -14,11 +14,20 @@
       vm.docDetails = {};
       vm.docList = [];
       vm.getDetails = getDetails;
-      vm.getDocList = getDocList();
       vm.prettyUrl = prettyUrl;
 
+      activate();
+
+      function activate() {
+        getDocList();
+      }
+
       function addToTimeline(docTitle) {
-        profileFactory.addToTimeline(docTitle);
+        return profileFactory.addToTimeline(docTitle)
+                             .then(showMessage);
+          function showMessage(response) {
+            $mdToast.showSimple(response.pop().title + 'added to timeline');
+          }
       }
 
       function addToWatchlist(docTitle) {
@@ -49,8 +58,6 @@
       function setDocList(data) {
         vm.docList = data;
       }
-
-
 
     }
 

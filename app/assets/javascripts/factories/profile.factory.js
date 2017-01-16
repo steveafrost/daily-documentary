@@ -38,7 +38,7 @@
                     .then(updateTimeline);
 
         function updateTimeline(response) {
-          profileFactory.timeline = response.data;
+          return response.data;
         }
       }
 
@@ -63,7 +63,7 @@
                     .then(updateWatchlist);
 
         function updateWatchlist(response) {
-          profileFactory.watchlist = response.data;
+          return response.data;
         }
       }
 
