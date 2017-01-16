@@ -10,11 +10,9 @@
       return {
         addToTimeline: addToTimeline,
         addToWatchlist: addToWatchlist,
-        getTimeline: getTimeline(),
-        getWatchlist: getWatchlist(),
-        removeDoc: removeDoc,
-        timeline: [],
-        watchlist: []
+        getTimeline: getTimeline,
+        getWatchlist: getWatchlist,
+        removeDoc: removeDoc
       };
 
       function addToTimeline(title) {
@@ -80,8 +78,7 @@
       }
 
       function handleResponse(response) {
-        console.log(response);
-        return response;
+        return response.data;
       }
 
       function handleError(error) {

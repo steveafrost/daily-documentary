@@ -23,11 +23,20 @@
           url: '/profile',
           templateUrl: 'profile.html',
           controller: 'ProfileController',
-          controllerAs: 'vm'
+          controllerAs: 'vm',
+          resolve: {
+            timeline: function(profileFactory) {
+              return profileFactory.getTimeline();
+            },
+            watchlist: function(profileFactory) {
+              return profileFactory.getWatchlist();
+            }
+          }
         })
         .state('profile.timeline', {
           url: '/timeline',
-          templateUrl: 'timeline.html'
+          templateUrl: 'timeline.html',
+
         })
         .state('profile.watchlist', {
           url: '/watchlist',

@@ -4,21 +4,29 @@
 angular.module('dailyDocumentary')
        .controller('ProfileController', ProfileController);
 
-  function ProfileController(profileFactory, $state, $mdToast) {
+  function ProfileController(profileFactory, $state, $mdToast, timeline, watchlist) {
     var vm = this;
 
     vm.hello = "Hello, Steve";
     vm.removeDoc = removeDoc;
-    vm.timeline = profileFactory.timeline;
-    vm.watchlist = profileFactory.watchlist;
+    vm.getTimeline = getTimeline;
+    vm.getWatchlist = getWatchlist;
+    vm.timeline = timeline;
+    vm.watchlist = watchlist;
 
-    profileFactory.getTimeline.then(function(response) {
-      vm.timeline = response.data;
-    });
+    function getTimeline() {
+      profileFactory.getTimeline()
+                    .then(function(response) {
+                      vm.timeline = response.data;
+      });
+    }
 
-    profileFactory.getWatchlist.then(function(response) {
-      vm.watchlist = response.data;
-    });
+    function getWatchlist() {
+      profileFactory.getWatchlist()
+                    .then(function(response) {
+                      vm.watchlist = response.data;
+      });
+    }
 
     function removeDoc(docId) {
       return profileFactory.removeDoc(docId)
@@ -26,6 +34,7 @@ angular.module('dailyDocumentary')
 
       function showMessage(message) {
         $mdToast.showSimple(message);
+
       }
     }
 
