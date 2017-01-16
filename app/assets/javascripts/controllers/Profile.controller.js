@@ -17,14 +17,14 @@ angular.module('dailyDocumentary')
     function getTimeline() {
       profileFactory.getTimeline()
                     .then(function(response) {
-                      vm.timeline = response.data;
+                      vm.timeline = response;
       });
     }
 
     function getWatchlist() {
       profileFactory.getWatchlist()
                     .then(function(response) {
-                      vm.watchlist = response.data;
+                      vm.watchlist = response;
       });
     }
 
@@ -33,6 +33,8 @@ angular.module('dailyDocumentary')
                            .then(showMessage);
 
       function showMessage(message) {
+        vm.getTimeline();
+        vm.getWatchlist();
         $mdToast.showSimple(message);
 
       }
