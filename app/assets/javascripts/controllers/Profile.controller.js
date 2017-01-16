@@ -7,7 +7,6 @@ angular.module('dailyDocumentary')
   function ProfileController(profileFactory, $state, $mdToast, timeline, watchlist) {
     var vm = this;
 
-    vm.hello = "Hello, Steve";
     vm.removeDoc = removeDoc;
     vm.getTimeline = getTimeline;
     vm.getWatchlist = getWatchlist;
@@ -36,7 +35,6 @@ angular.module('dailyDocumentary')
         vm.getTimeline();
         vm.getWatchlist();
         $mdToast.showSimple(message);
-
       }
     }
 

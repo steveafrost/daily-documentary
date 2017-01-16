@@ -1,6 +1,12 @@
 <div flex="90" flex-offset="5">
   <h1>Watchlist</h1>
-  <div layout="row" ng-repeat="doc in vm.watchlist">
+
+  <md-input-container>
+    <label>Search Watchlist</label>
+    <input ng-model="search" type="text">
+  </md-input-container>
+
+  <div layout="row" ng-repeat="doc in vm.watchlist | filter: search">
     <div layout="column">
       <md-card>
         <md-card-title>

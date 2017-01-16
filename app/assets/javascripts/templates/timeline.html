@@ -1,7 +1,12 @@
 <div flex="90" flex-offset="5">
   <h1>Timeline</h1>
-  <h4 ng-bind="vm.token"></h4>
-  <div layout="row" ng-repeat="doc in vm.timeline">
+
+  <md-input-container>
+    <label>Search Timeline</label>
+    <input ng-model="search" type="text">
+  </md-input-container>
+
+  <div layout="row" ng-repeat="doc in vm.timeline | filter:search">
     <div layout="column">
       <md-card>
         <md-card-title>
