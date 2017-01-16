@@ -48,7 +48,7 @@
       $locationProvider.html5Mode(true);
 
       $mdThemingProvider.theme('default')
-        .primaryPalette('deep-purple')
+        .primaryPalette('teal')
         .accentPalette('deep-purple');
   });
 
