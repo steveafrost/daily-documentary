@@ -19,7 +19,7 @@
       activate();
 
       function activate() {
-        getDocList();
+        docFactory.getDocList().then(setDocList);
       }
 
       function addToTimeline(docTitle) {
@@ -41,10 +41,6 @@
         } else {
           vm.currentDoc = false;
         }
-      }
-
-      function getDocList() {
-        docFactory.getDocList().then(setDocList);
       }
 
       function prettyUrl(string) {
