@@ -11,6 +11,12 @@
         getDocDetails: getDocDetails
       };
 
+      function formatDocTitle(str) {
+        allSymbols = (/[$&+,:;=?@#|'<>.^*()%!-]/);
+        str = str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+        return str.substring(0, str.search(allSymbols));
+      }
+
       function getDocList() {
         return $http.get('https://www.reddit.com/r/documentaries.json')
                     .then(handleList);
@@ -37,16 +43,15 @@
 
         allDocs.forEach(function(element, index) {
           docInfo = element.data;
-          docTitle = docInfo.title.substring(0, docInfo.title.indexOf('('));
+          docPattern = /[$&+,:;=?@#|'<>.^*()%!-]/;
+          docTitle = formatDocTitle(docInfo.title);
           docUrl = docInfo.url;
-          if (docTitle !== "") {
+          if (docTitle !== "" && !docTitle.includes("Request")) {
             docList.push({id: index, title: docTitle, url: docUrl});
           }
         });
         return docList;
       }
-
-
 
 
 

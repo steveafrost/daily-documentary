@@ -31,7 +31,7 @@
 
         $http.post("/api/documentaries", data, config).then(function(response) {
           console.log(data + 'added to timeline');
-          console.log('rails responded with' + response.data)
+          console.log('rails responded with' + response.data);
           angular.copy(response.data, profileFactory.timeline);
         });
       }

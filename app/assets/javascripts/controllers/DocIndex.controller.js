@@ -14,6 +14,7 @@
       vm.docList = [];
       vm.getDetails = getDetails;
       vm.getDocList = getDocList();
+      vm.prettyUrl = prettyUrl;
 
       function addToTimeline(docTitle) {
         profileFactory.addToTimeline(docTitle);
@@ -36,6 +37,10 @@
         docFactory.getDocList().then(setDocList);
       }
 
+      function prettyUrl(string) {
+        return string.trim().replace(/\s/g, '-').toLowerCase();
+      }
+
       function setDocDetails(data) {
         vm.docDetails = data;
       }
@@ -43,6 +48,8 @@
       function setDocList(data) {
         vm.docList = data;
       }
+
+
 
     }
 
