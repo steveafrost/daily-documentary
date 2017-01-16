@@ -6,6 +6,9 @@
         <md-card-title>
           <h4 ng-bind="doc.title"></h4>
         </md-card-title>
+        <md-card-actions layout-align="end center">
+          <md-button ng-click="vm.removeDoc(doc.id)" aria-label="remove">X</md-button>
+        </md-card-actions>
       </md-card>
     </div>
   </div>

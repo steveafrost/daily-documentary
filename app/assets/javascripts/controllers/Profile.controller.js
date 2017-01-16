@@ -3,7 +3,7 @@
 angular.module('dailyDocumentary')
        .controller('ProfileController', ProfileController);
 
-  function ProfileController(profileFactory) {
+  function ProfileController(profileFactory, $state, $mdToast) {
     var vm = this;
 
     vm.hello = "Hello, Steve";
@@ -24,7 +24,7 @@ angular.module('dailyDocumentary')
                            .then(showMessage);
 
       function showMessage(message) {
-        alert(message);
+        $mdToast.showSimple(message);
       }
     }
 
