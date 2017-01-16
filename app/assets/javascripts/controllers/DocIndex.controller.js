@@ -31,7 +31,11 @@
       }
 
       function addToWatchlist(docTitle) {
-        profileFactory.addToWatchlist(docTitle);
+        return profileFactory.addToWatchlist(docTitle)
+                             .then(showMessage);
+          function showMessage(response) {
+            $mdToast.showSimple(response.pop().title + 'added to watchlist');
+          }
       }
 
       function getDetails(doc) {
