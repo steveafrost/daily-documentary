@@ -29,7 +29,9 @@
           }
         };
 
-        $http.post("/api/documentaries", data, config).then(function(response, status, config) {
+        $http.post("/api/documentaries", data, config).then(function(response) {
+          console.log(data + 'added to timeline');
+          console.log('rails responded with' + response.data)
           angular.copy(response.data, profileFactory.timeline);
         });
       }
@@ -48,7 +50,8 @@
           }
         };
 
-        $http.post("/api/documentaries", data, config).then(function(response, status, config) {
+        $http.post("/api/documentaries", data, config).then(function(response) {
+          console.log(data + 'added to watchlist');
           angular.copy(response.data, profileFactory.watchlist);
         });
       }
