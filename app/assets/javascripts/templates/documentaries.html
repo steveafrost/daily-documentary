@@ -1,7 +1,7 @@
 <div ng-controller="DocIndexController as vm">
   <br>
   <md-list ng-repeat="doc in vm.docList track by doc.id">
-    <md-list-item ng-click="vm.getDetails(doc.title, doc.id)" ui-sref="documentaries.details({movie: doc.title})">
+    <md-list-item ng-click="vm.getDetails(doc)" ui-sref="documentaries.details({movie: doc.title})">
       <h4 ng-bind="doc.title"></h4>
       <div flex></div>
       <div ng-if="vm.currentDoc === doc.id[0]">

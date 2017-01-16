@@ -23,19 +23,17 @@
         profileFactory.addToWatchlist(docTitle);
       }
 
-      function getDetails(doc, index) {
-        if (vm.currentDoc === index) {
-          vm.currentDoc = false;
+      function getDetails(doc) {
+        if (vm.currentDoc !== doc.id) {
+          docFactory.getDocDetails(doc.title).then(setDocDetails);
+          vm.currentDoc = doc.id;
         } else {
-          vm.currentDoc = index;
-          docFactory.getDocDetails(doc)
-                    .then(setDocDetails);
+          vm.currentDoc = false;
         }
       }
 
       function getDocList() {
-        docFactory.getDocList()
-                  .then(setDocList);
+        docFactory.getDocList().then(setDocList);
       }
 
       function setDocDetails(data) {
