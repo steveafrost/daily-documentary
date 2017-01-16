@@ -7,6 +7,7 @@ angular.module('dailyDocumentary')
     var vm = this;
 
     vm.hello = "Hello, Steve";
+    vm.removeDoc = removeDoc;
     vm.timeline = profileFactory.timeline;
     vm.watchlist = profileFactory.watchlist;
 
@@ -17,6 +18,15 @@ angular.module('dailyDocumentary')
     profileFactory.getWatchlist.then(function(response) {
       vm.watchlist = response.data;
     });
+
+    function removeDoc(docId) {
+      return profileFactory.removeDoc(docId)
+                           .then(showMessage);
+
+      function showMessage(message) {
+        alert(message);
+      }
+    }
 
   }
 

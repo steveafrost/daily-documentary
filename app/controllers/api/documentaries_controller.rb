@@ -1,5 +1,7 @@
 class API::DocumentariesController < ApplicationController
 
+  before_action :set_doc, except: [:index, :create]
+
   def index
     documentaries = Documentary.all
     render json: documentaries, status: 201
@@ -20,13 +22,20 @@ class API::DocumentariesController < ApplicationController
   end
 
   def destroy
-    documentary = Documentary.find_by_name(documentary_params.title)
-    documentary.destroy
+    if @doc.destroy
+      render json: { message: "#{@doc.title} was successfully removed" }
+    else
+      render json: { error: "There was an issue removing #{@doc.title}"}
+    end
   end
 
   private
 
   def documentary_params
     params.require(:documentary).permit(:title, :timeline, :watchlist)
+  end
+
+  def set_doc
+    @doc = Documentary.find_by_id(params[:id])
   end
 end

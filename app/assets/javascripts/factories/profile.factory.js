@@ -11,6 +11,7 @@
         addToWatchlist: addToWatchlist,
         getTimeline: getTimeline(),
         getWatchlist: getWatchlist(),
+        removeDoc: removeDoc,
         timeline: [],
         watchlist: []
       };
@@ -76,6 +77,23 @@
       function handleError(error) {
         console.log(error);
         return error;
+      }
+
+      function removeDoc(docId) {
+        var req = {
+          method: 'DELETE',
+          url: '/api/documentaries/' + docId,
+          headers : {
+            'Content-Type': 'application/json'
+          }
+        };
+
+        return $http(req)
+                    .then(handleDelete);
+
+        function handleDelete(response) {
+          return response.data.message;
+        }
       }
 
     }
