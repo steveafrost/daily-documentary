@@ -1,5 +1,4 @@
-<div>
-  <br>
+<md-content flex="80" flex-offset="10" layout-padding>
   <md-list ng-repeat="doc in vm.docList track by doc.id">
     <md-list-item ng-click="vm.getDetails(doc)" ui-sref="documentaries.details({movie: vm.prettyUrl(doc.title)})">
       <h4 ng-bind="doc.title"></h4>
@@ -18,4 +17,4 @@
 
     <md-divider></md-divider>
   </md-list>
-</div>
+</md-content>
