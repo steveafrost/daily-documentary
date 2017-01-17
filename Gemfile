@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 # Require at least 1.8.4 of Bundler to use Rails Assets
 gem 'bundler', '>= 1.8.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -19,7 +21,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
@@ -30,7 +31,6 @@ gem 'angular-rails-templates', '~> 1.0', '>= 1.0.2'
 gem 'active_model_serializers', '~> 0.10.0'
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap'
   gem 'rails-assets-angular'
   gem 'rails-assets-angular-material'
   gem 'rails-assets-angular-material-icons'
