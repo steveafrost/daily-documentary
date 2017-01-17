@@ -9,8 +9,10 @@
     <base href="/">
   </head>
 
-  <body>
-    <%= render 'layouts/navigation.html' %>
-    <ui-view></ui-view>
+  <body layout="column">
+    <%= render "layouts/navigation" %>
+    <md-content flex>
+      <ui-view></ui-view>
+    </md-content>
   </body>
 </html>
