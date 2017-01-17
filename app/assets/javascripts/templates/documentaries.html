@@ -1,15 +1,6 @@
 <md-list ng-repeat="doc in vm.docList track by doc.id">
   <md-list-item ng-click="vm.getDetails(doc)" ui-sref="details({movie: vm.prettyUrl(doc.title)})">
     <h4 ng-bind="doc.title"></h4>
-    <div flex></div>
-    <div ng-if="vm.currentDoc === doc.id[0]">
-      <h4>
-        <div ng-if="vm.docDetails.Error != 'Movie not found!'">
-          <span ng-bind="'Year: ' + vm.docDetails.Year"></span> |
-          <span ng-bind="'Runtime: ' + vm.docDetails.Runtime"></span>
-        </div>
-      </h4>
-    </div>
   </md-list-item>
   <md-divider></md-divider>
 </md-list>
