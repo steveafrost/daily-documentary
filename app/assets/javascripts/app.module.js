@@ -2,7 +2,7 @@
   'use-strict';
 
   angular
-    .module('dailyDocumentary', ['ui.router', 'templates', 'ngMaterial', 'ngMdIcons'])
+    .module('dailyDocumentary', ['ui.router', 'templates', 'ngMaterial'])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $mdThemingProvider) {
       $stateProvider
         .state('home', {

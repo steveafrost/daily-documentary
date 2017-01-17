@@ -23,11 +23,9 @@
             <h4 ng-bind="vm.docDetails.Error"></h4>
           </md-card-title-text>
         </md-card-title>
-
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button ng-href="{{doc.url}}" target="_blank" aria-label="view"><ng-md-icon icon="tv"></md-icon></md-button>
-          <md-button ng-click="vm.addToTimeline(doc.title)" aria-label="timeline"><ng-md-icon icon="done"></md-icon></md-button>
-          <md-button ng-click="vm.addToWatchlist(doc.title)" aria-label="watchlist"><ng-md-icon icon="watch_later"></md-button>
+          <md-button ng-href="{{doc.url}}" target="_blank" aria-label="view"><md-icon md-svg-icon="./assets/view.svg"></md-icon></md-button>
+          <md-button ng-click="vm.addToTimeline(doc.title)" aria-label="timeline"><md-icon md-svg-icon="./assets/timeline.svg"></md-icon></md-button>
+          <md-button ng-click="vm.addToWatchlist(doc.title)" aria-label="watchlist"><md-icon md-svg-icon="./assets/watchlist.svg"></md-icon></md-button>
         </md-card-actions>
       </md-card>
     </div>
