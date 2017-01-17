@@ -15,9 +15,20 @@
         </md-card-title>
 
         <md-card-actions>
-          <md-button ng-href="{{doc.url}}" target="_blank" aria-label="view"><md-icon md-svg-icon="./assets/view.svg"></md-icon></md-button>
-          <md-button ng-click="vm.addToTimeline(doc.title)" aria-label="timeline"><md-icon md-svg-icon="./assets/timeline.svg"></md-icon></md-button>
-          <md-button ng-click="vm.addToWatchlist(doc.title)" aria-label="watchlist"><md-icon md-svg-icon="./assets/watchlist.svg"></md-icon></md-button>
+          <md-button ng-href="{{doc.url}}" target="_blank" aria-label="view">
+            <md-icon md-svg-icon="./assets/view.svg"></md-icon>
+            <md-tooltip>Watch Now</md-tooltip>
+          </md-button>
+
+          <md-button ng-click="vm.addToTimeline(doc.title)" aria-label="timeline">
+            <md-icon md-svg-icon="./assets/timeline.svg"></md-icon>
+            <md-tooltip>Watched</md-tooltip>
+          </md-button>
+
+          <md-button ng-click="vm.addToWatchlist(doc.title)" aria-label="watchlist">
+            <md-icon md-svg-icon="./assets/watchlist.svg"></md-icon>
+            <md-tooltip>Watch Later</md-tooltip>
+          </md-button>
         </md-card-actions>
       </md-card>
     </div>
