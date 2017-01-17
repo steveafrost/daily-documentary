@@ -1,15 +1,12 @@
 <div flex="90" flex-offset="5">
-  <div ng-if="vm.currentDoc === doc.id">
-  <div layout="row">
     <div layout="column">
       <md-card>
-
-        <!-- Card Title if API has success" -->
-        <md-card-title ng-show="!vm.docDetails.Error">
+        <md-card-title>
           <md-card-title-media>
             <div class="md-media-md card-media"><img ng-src="{{vm.docDetails.Poster}}"></div>
           </md-card-title-media>
           <md-card-title-text>
+              <h4 ng-bind="vm.docDetails.Error"></h4>
               <p ng-bind="'Actors: ' + vm.docDetails.Actors"></p>
               <p ng-bind="'Plot: ' + vm.docDetails.Plot"></p>
               <p ng-bind="'Rating: ' + vm.docDetails.imdbRating"></p>
@@ -17,12 +14,7 @@
           </md-card-title-text>
         </md-card-title>
 
-        <!-- Card Title if API has error" -->
-        <md-card-title ng-show="!!vm.docDetails.Error">
-          <md-card-title-text>
-            <h4 ng-bind="vm.docDetails.Error"></h4>
-          </md-card-title-text>
-        </md-card-title>
+        <md-card-actions>
           <md-button ng-href="{{doc.url}}" target="_blank" aria-label="view"><md-icon md-svg-icon="./assets/view.svg"></md-icon></md-button>
           <md-button ng-click="vm.addToTimeline(doc.title)" aria-label="timeline"><md-icon md-svg-icon="./assets/timeline.svg"></md-icon></md-button>
           <md-button ng-click="vm.addToWatchlist(doc.title)" aria-label="watchlist"><md-icon md-svg-icon="./assets/watchlist.svg"></md-icon></md-button>
