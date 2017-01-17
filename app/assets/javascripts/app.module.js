@@ -19,7 +19,12 @@
           url: '/documentaries/:movie',
           templateUrl: 'details.html',
           controller: 'DocIndexController',
-          controllerAs: 'vm'
+          controllerAs: 'vm',
+          resolve: {
+            docDetails: function($stateParams, docFactory) {
+              return docFactory.getDocDetails($stateParams.movie);
+            }
+          }
         })
         .state('profile', {
           url: '/profile',

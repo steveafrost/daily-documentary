@@ -26,6 +26,7 @@
 
       function handleDetails(response) {
         return response.data;
+        debugger
       }
 
       function handleError(error) {

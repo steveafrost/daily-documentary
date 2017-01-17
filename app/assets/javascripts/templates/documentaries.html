@@ -1,5 +1,5 @@
 <md-list ng-repeat="doc in vm.docList track by doc.id">
-  <md-list-item ng-click="vm.getDetails(doc)" ui-sref="details({movie: vm.prettyUrl(doc.title)})">
+  <md-list-item ui-sref="details({movie: vm.prettyUrl(doc.title)})">
     <h4 ng-bind="doc.title"></h4>
   </md-list-item>
   <md-divider></md-divider>
