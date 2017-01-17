@@ -9,11 +9,61 @@
     <base href="/">
   </head>
 
-  <body layout="column">
-    <dd-toolbar></dd-toolbar>
-    <dd-navigation></dd-navigation>
+  <body layout="column" ng-controler="AppController">
+
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Menu">
+          <md-icon md-svg-icon="./assets/menu.svg"></md-icon>
+        </md-button>
+        <h2>
+          <a ui-sref="home"><span>Daily Documentary</span></a>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Happy">
+          <md-icon md-svg-icon="./assets/happy.svg"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Share">
+          <md-icon md-svg-icon="./assets/share.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
     <div layout="row">
-      <dd-navigation></dd-navigation>
+      <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-sm')"
+        md-whiteframe="4" layout="column">
+
+        <md-list>
+          <md-list-item>
+            <md-button ui-sref="documentaries">
+              <md-icon md-svg-icon="./assets/view.svg"></md-icon>  Documentaries
+            </md-button>
+          </md-list-item>
+
+          <md-list-item>
+
+            <md-button ui-sref="profile">
+              <md-icon md-svg-icon="./assets/profile.svg"></md-icon>  Profile
+            </md-button>
+          </md-list-item>
+
+          <md-list-item>
+            <md-button ui-sref="profile.timeline">
+              <md-icon md-svg-icon="./assets/timeline.svg"></md-icon>  Timeline
+              </md-button>
+          </md-list-item>
+
+          <md-list-item>
+            <md-button ui-sref="profile.watchlist">
+            <md-icon md-svg-icon="./assets/watchlist.svg"></md-icon>  Watchlist
+            </md-button>
+          </md-list-item>
+        </md-list>
+      </md-sidenav>
+
       <md-content flex>
         <ui-view></ui-view>
       </md-content>
