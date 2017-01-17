@@ -10,9 +10,10 @@
   </head>
 
   <body layout="column">
-    <%= render "layouts/toolbar" %>
+    <dd-toolbar></dd-toolbar>
+    <dd-navigation></dd-navigation>
     <div layout="row">
-      <%= render "layouts/navigation" %>
+      <dd-navigation></dd-navigation>
       <md-content flex>
         <ui-view></ui-view>
       </md-content>
