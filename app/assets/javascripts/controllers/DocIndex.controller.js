@@ -5,13 +5,12 @@
     .module('dailyDocumentary')
     .controller('DocIndexController', DocIndexController);
 
-    function DocIndexController(docFactory, profileFactory, $mdToast, $state) {
+    function DocIndexController($mdToast, $state, docFactory, profileFactory) {
 
       var vm = this;
       vm.addToTimeline = addToTimeline;
       vm.addToWatchlist = addToWatchlist;
       vm.docList = [];
-      vm.getDetails = getDetails;
       vm.prettyUrl = prettyUrl;
 
       activate();
@@ -36,19 +35,8 @@
           }
       }
 
-      function getDetails(doc) {
-        docFactory.getDocDetails(doc.title).then(setDocDetails);
-      }
-
       function prettyUrl(string) {
         return string.trim().replace(/\s/g, '-').toLowerCase();
-      }
-
-      function setDocDetails(data) {
-        vm.docDetails = data;
-        debugger;
-        console.log(vm.docDetails);
-        $state.go('details');
       }
 
       function setDocList(data) {

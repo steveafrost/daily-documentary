@@ -26,7 +26,6 @@
 
       function handleDetails(response) {
         return response.data;
-        debugger
       }
 
       function handleError(error) {
@@ -42,7 +41,7 @@
           docPattern = /[$&+,:;=?@#|'<>.^*()%!-]/;
           docTitle = trimToFirstSymbol(titleCase(docInfo.title));
           docUrl = docInfo.url;
-          docImage = docInfo.preview.images[0].source.url
+          docImage = docInfo.preview.images[0].source.url;
           if (docTitle !== "" && !docTitle.includes("Request")) {
             docList.push({id: index, title: docTitle, url: docUrl, image: docImage});
           }
