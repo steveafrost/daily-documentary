@@ -18,7 +18,7 @@
         .state('details', {
           url: '/documentaries/:movie',
           templateUrl: 'details.html',
-          controller: 'DocIndexController',
+          controller: 'DocDetailsController',
           controllerAs: 'vm',
           resolve: {
             docDetails: function($stateParams, docFactory) {
