@@ -5,12 +5,11 @@
     .module('dailyDocumentary')
     .controller('DocIndexController', DocIndexController);
 
-    function DocIndexController(docFactory, profileFactory, $mdToast) {
+    function DocIndexController(docFactory, profileFactory, $mdToast, $state) {
 
       var vm = this;
       vm.addToTimeline = addToTimeline;
       vm.addToWatchlist = addToWatchlist;
-      vm.currentDoc = false;
       vm.docDetails = {};
       vm.docList = [];
       vm.getDetails = getDetails;
@@ -39,12 +38,7 @@
       }
 
       function getDetails(doc) {
-        if (vm.currentDoc !== doc.id) {
-          docFactory.getDocDetails(doc.title).then(setDocDetails);
-          vm.currentDoc = doc.id;
-        } else {
-          vm.currentDoc = false;
-        }
+        docFactory.getDocDetails(doc.title).then(setDocDetails);
       }
 
       function prettyUrl(string) {
@@ -53,6 +47,9 @@
 
       function setDocDetails(data) {
         vm.docDetails = data;
+        debugger;
+        console.log(vm.docDetails);
+        $state.go('details');
       }
 
       function setDocList(data) {

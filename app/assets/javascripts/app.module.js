@@ -15,9 +15,11 @@
           controller: 'DocIndexController',
           controllerAs: 'vm'
         })
-        .state('documentaries.details', {
-          url: '/:movie/details',
-          templateUrl: 'details.html'
+        .state('details', {
+          url: '/documentaries/:movie',
+          templateUrl: 'details.html',
+          controller: 'DocIndexController',
+          controllerAs: 'vm'
         })
         .state('profile', {
           url: '/profile',
