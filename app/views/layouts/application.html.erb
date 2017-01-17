@@ -13,17 +13,18 @@
 
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.toggleNav()">
+        <md-button class="md-icon-button" aria-label="menu" ng-click="vm.toggleNav()">
           <md-icon md-svg-icon="./assets/menu.svg"></md-icon>
         </md-button>
         <h2>
           <a ui-sref="home"><span>Daily Documentary</span></a>
         </h2>
         <span flex></span>
-        <md-button class="md-icon-button" aria-label="Happy">
+        <h2>{{vm.happyCount}}</h2>
+        <md-button class="md-icon-button" aria-label="happy" ng-click="vm.happyChange()">
           <md-icon md-svg-icon="./assets/happy.svg"></md-icon>
         </md-button>
-        <md-button class="md-icon-button" aria-label="Share">
+        <md-button class="md-icon-button" aria-label="share">
           <md-icon md-svg-icon="./assets/share.svg"></md-icon>
         </md-button>
       </div>
