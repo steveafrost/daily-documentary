@@ -10,7 +10,7 @@
       return {
         getDocList: getDocList,
         getDocDetails: getDocDetails,
-        getDocWatchLink: getDocWatchLink
+        getDocActions: getDocActions
       };
 
       function getDocList() {
@@ -26,14 +26,21 @@
                     .catch(handleError);
       }
 
-      function getDocWatchLink(docTitle) {
+      function getDocActions(docTitle) {
         concatTitle = docTitle.replace(/\ /g, "+");
         return $http.get('https://www.reddit.com/r/Documentaries/search.json?q=' + concatTitle + '&restrict_sr=on&limit=1')
-                    .then(handleWatchLink);
+                    .then(handleDocActions);
       }
 
       function handleDetails(response) {
         return response.data;
+      }
+
+      function handleDocActions(response) {
+        docInfo = response.data.data.children[0].data;
+        docTitle = trimToFirstSymbol(titleCase(docInfo.title));
+        docUrl = docInfo.url;
+        return {docTitle: docTitle, docUrl: docUrl};
       }
 
       function handleError(error) {
@@ -55,10 +62,6 @@
           }
         });
         return docList;
-      }
-
-      function handleWatchLink(response) {
-        return response.data.data.children[0].data.url;
       }
 
       function titleCase(str) {

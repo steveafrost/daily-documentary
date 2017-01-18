@@ -5,12 +5,12 @@
     .module('dailyDocumentary')
     .controller('DocDetailsController', DocDetailsController);
 
-  function DocDetailsController($mdToast, docDetails, profileFactory, docWatchLink) {
+  function DocDetailsController($mdToast, docDetails, profileFactory, docActions) {
     var vm = this;
     vm.addToTimeline = addToTimeline;
     vm.addToWatchlist = addToWatchlist;
     vm.docDetails = docDetails;
-    vm.docWatchLink = docWatchLink;
+    vm.docActions = docActions;
 
     function addToTimeline(docTitle) {
       return profileFactory.addToTimeline(docTitle)

@@ -20,17 +20,17 @@
         </md-card-title>
 
         <md-card-actions layout-align="end" layout="row">
-          <md-button ng-href="{{doc.url}}" target="_blank" aria-label="view">
+          <md-button ng-href="{{vm.docActions.docUrl}}" target="_blank" aria-label="view">
             <md-icon md-svg-icon="./assets/view.svg"></md-icon>
             <md-tooltip>Watch Now</md-tooltip>
           </md-button>
 
-          <md-button ng-click="vm.addToTimeline(doc.title)" aria-label="timeline">
+          <md-button ng-click="vm.addToTimeline(vm.docActions.docTitle)" aria-label="timeline">
             <md-icon md-svg-icon="./assets/timeline_black.svg"></md-icon>
             <md-tooltip>Watched</md-tooltip>
           </md-button>
 
-          <md-button ng-click="vm.addToWatchlist(doc.title)" aria-label="watchlist">
+          <md-button ng-click="vm.addToWatchlist(vm.docActions.docTitle)" aria-label="watchlist">
             <md-icon md-svg-icon="./assets/watchlist.svg"></md-icon>
             <md-tooltip>Watch Later</md-tooltip>
           </md-button>
