@@ -4,7 +4,7 @@
 angular.module('dailyDocumentary')
        .controller('ProfileController', ProfileController);
 
-  function ProfileController(profileFactory, $state, $mdToast, timeline, watchlist) {
+  function ProfileController($mdToast, $state, timeline, profileFactory, watchlist) {
     var vm = this;
 
     vm.removeDoc = removeDoc;
