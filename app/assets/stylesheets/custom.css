@@ -39,6 +39,7 @@ timeline-heading, timeline-heading h4 {
 span.grid-tile-title {
   font-weight: 700;
   font-size: 18px;
+  padding-left: 10px;
 }
 
 md-grid-list md-grid-tile figure {
@@ -47,4 +48,8 @@ md-grid-list md-grid-tile figure {
 
 md-grid-tile:hover {
   cursor: pointer;
+}
+
+md-grid-list md-grid-tile md-grid-tile-footer {
+  background: rgba(0, 0, 0, 0.75);
 }
