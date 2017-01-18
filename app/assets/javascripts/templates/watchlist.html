@@ -13,9 +13,9 @@
     md-row-height-gt-md="4:3" md-row-height="4:3"
     md-gutter="10px">
 
-    <md-grid-tile ng-repeat="doc in vm.watchlist" class="md-whiteframe-5dp" ui-sref="details({movie: vm.prettyUrl(doc.title)})" layout="column">
+    <md-grid-tile ng-repeat="doc in vm.watchlist" class="md-whiteframe-5dp"  layout="column">
 
-      <img ng-src="{{doc.image}}">
+      <img ng-src="{{doc.image}}" ui-sref="details({movie: vm.prettyUrl(doc.title)})">
 
         <md-grid-tile-footer layout="row">
           <span class="grid-tile-title">{{doc.title}}</span>
