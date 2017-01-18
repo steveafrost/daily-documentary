@@ -36,18 +36,11 @@ timeline-heading, timeline-heading h4 {
   margin-bottom: 0px;
 }
 
-
-
-md-card .md-card-image {
-  height: 65%;
+md-grid-list md-grid-tile figure {
+  overflow: hidden;
 }
 
-md-card md-card-title {
-    padding: 0px 15px 0px;
-    display: flex;
-    margin-top: -45px;
-    flex: 1 1 auto;
-    flex-direction: row;
-    color: white;
-    background-color: rgba(0,0,0,0.5);
+md-grid-list md-grid-tile md-grid-tile-footer h3 {
+  font-weight: 700;
+  font-size: 18px;
 }

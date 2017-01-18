@@ -4,8 +4,9 @@
   </md-list-item>
   <md-divider></md-divider>
 </md-list> -->
-<div layout="row" layout-wrap layout-align="center">
-  <md-card ng-repeat="doc in vm.docList" flex="30">
+
+<!-- <div layout="row" layout-wrap layout-align="center">
+  <md-card ng-repeat="doc in vm.docList" flex="30" ui-sref="details({movie: vm.prettyUrl(doc.title)})">
     <img ng-src="{{doc.image}}" class="md-card-image" alt="{{doc.title}}">
 
     <md-card-title>
@@ -31,4 +32,16 @@
       </md-button>
     </md-card-actions>
   </md-card>
-</div>
+</div> -->
+<md-content layout-padding>
+  <md-grid-list
+        md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
+        md-row-height-gt-md="4:3" md-row-height="4:3"
+        md-gutter="10px">
+
+    <md-grid-tile ng-repeat="doc in vm.docList" class="md-whiteframe-5dp">
+      <img src="{{doc.image}}">
+      <md-grid-tile-footer><h3>{{doc.title}}</h3></md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>
+  </md-content>
