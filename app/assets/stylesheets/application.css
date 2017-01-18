@@ -12,6 +12,7 @@
  *
  *= require angular-material
  *= require angular-material-icons
+ *= require angular-timeline
  *= require_tree .
  *= require_self
  */

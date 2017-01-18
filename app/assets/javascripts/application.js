@@ -18,5 +18,6 @@
 //= require angular-animate
 //= require angular-ui-router
 //= require angular-rails-templates
+//= require angular-timeline
 //= require_tree ./templates
 //= require_tree .

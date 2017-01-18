@@ -35,6 +35,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular-material'
   gem 'rails-assets-angular-material-icons'
   gem 'rails-assets-angular-ui-router'
+  gem 'rails-assets-angular-timeline'
 end
 
 group :development, :test do

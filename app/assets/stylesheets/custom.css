@@ -26,3 +26,32 @@ md-sidenav md-icon {
   background-color: #512DA8;
   transition: 0.3s;
 }
+
+timeline-panel:after {
+    position: absolute;
+    top: 36px;
+    right: -14px;
+    display: inline-block;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #fff;
+    border-right: 0 solid #fff;
+    border-bottom: 14px solid transparent;
+    content: " ";
+}
+
+timeline-panel:before {
+    position: absolute;
+    top: 35px;
+    right: -15px;
+    display: inline-block;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #ccc;
+    border-right: 0 solid #ccc;
+    border-bottom: 15px solid transparent;
+    content: " ";
+}
+
+timeline-badge {
+  background-color: #6200ea;
+}
+
