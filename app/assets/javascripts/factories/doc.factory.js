@@ -10,7 +10,10 @@
       return {
         getDocList: getDocList,
         getDocDetails: getDocDetails,
-        getDocActions: getDocActions
+        getDocActions: getDocActions,
+        prettyUrl: prettyUrl,
+        titleCase: titleCase,
+        trimToFirstSymbol: trimToFirstSymbol
       };
 
       function getDocList() {
@@ -62,6 +65,10 @@
           }
         });
         return docList;
+      }
+
+      function prettyUrl(string) {
+        return string.trim().replace(/\s/g, '-').toLowerCase();
       }
 
       function titleCase(str) {

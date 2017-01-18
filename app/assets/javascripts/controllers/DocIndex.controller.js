@@ -36,7 +36,7 @@
       }
 
       function prettyUrl(string) {
-        return string.trim().replace(/\s/g, '-').toLowerCase();
+        return docFactory.prettyUrl(string);
       }
 
       function setDocList(data) {
