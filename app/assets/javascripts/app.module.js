@@ -23,6 +23,9 @@
           resolve: {
             docDetails: function($stateParams, docFactory) {
               return docFactory.getDocDetails($stateParams.movie);
+            },
+            docWatchLink: function($stateParams, docFactory) {
+              return docFactory.getDocWatchLink($stateParams.movie);
             }
           }
         })

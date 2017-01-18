@@ -9,7 +9,8 @@
 
       return {
         getDocList: getDocList,
-        getDocDetails: getDocDetails
+        getDocDetails: getDocDetails,
+        getDocWatchLink: getDocWatchLink
       };
 
       function getDocList() {
@@ -23,6 +24,12 @@
         return $http.get('http://www.omdbapi.com/?t=' + concatTitle + '&y=&plot=short&r=json')
                     .then(handleDetails)
                     .catch(handleError);
+      }
+
+      function getDocWatchLink(docTitle) {
+        concatTitle = docTitle.replace(/\ /g, "+");
+        return $http.get('https://www.reddit.com/r/Documentaries/search.json?q=' + concatTitle + '&restrict_sr=on&limit=1')
+                    .then(handleWatchLink);
       }
 
       function handleDetails(response) {
@@ -48,6 +55,10 @@
           }
         });
         return docList;
+      }
+
+      function handleWatchLink(response) {
+        return response.data.data.children[0].data.url;
       }
 
       function titleCase(str) {
