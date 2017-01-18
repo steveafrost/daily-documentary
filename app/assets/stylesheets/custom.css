@@ -11,7 +11,7 @@ md-sidenav md-icon {
   font-weight: 300;
 }
 
-.jumbotron-button {
+.jumbotron-button, .profile-button {
   color: #FFFFFF;
   background-color: #6200ea;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.26);
@@ -22,7 +22,7 @@ md-sidenav md-icon {
   text-align: center;
 }
 
-.jumbotron-button:not([disabled]):hover {
+.jumbotron-button:not([disabled]):hover, .profile-button:not([disabled]):hover {
   background-color: #512DA8;
   transition: 0.3s;
 }

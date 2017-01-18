@@ -1,3 +1,14 @@
 <md-content layout-padding>
-  <ui-view></ui-view>
-</md-content>
+  <md-content flex layout-padding>
+  <div class="jumbotron" flex-offset-gt-sm="10" flex-gt-sm="80">
+    <h1 class="md-display-4 jumbotron-title">Your Profile</h1>
+    <p class="md-display-1 jumbotron-body">After the other pages are complete, I want to add a of graphic here that shows how many docs have been loaded, watched, and marked watch for later. Either that or some other similar type of visualization or cumulative activity.</p>
+    <center>
+      <md-button class="jumbotron-button" ui-sref="profile.timeline">Timeline</a></md-button>
+      <md-button class="jumbotron-button" ui-sref="profile.watchlist">Watchlist</a></md-button>
+    </center>
+  </div>
+
+  </md-content>
+    <ui-view></ui-view>
+  </md-content>
