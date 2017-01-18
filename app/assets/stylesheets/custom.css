@@ -53,3 +53,7 @@ md-grid-tile:hover {
 md-grid-list md-grid-tile md-grid-tile-footer {
   background: rgba(0, 0, 0, 0.75);
 }
+
+md-card md-card-title md-card-title-text {
+  padding-left: 15px;
+}
