@@ -1,32 +1,25 @@
-<!-- <md-content flex layout-padding>
+<md-content flex layout-padding>
 
   <div layout="row" layout-align="center">
     <md-input-container>
       <label>Search Timeline</label>
-        <input ng-model="search" type="text" style="font-size: 24px">
+      <input ng-model="search" type="text">
     </md-input-container>
   </div>
 
-  <div layout="row" layout-xs="column" ng-repeat="doc in vm.timeline | filter:search">
-    <md-card>
-      <md-card-title>
-        <h4 ng-bind="doc.title"></h4>
-      </md-card-title>
-      <md-card-actions layout-align="end center">
-        <md-button ng-click="vm.removeDoc(doc.id)" aria-label="remove">X</md-button>
-      </md-card-actions>
-    </md-card>
-  </div>
-</md-content> -->
-
-<timeline>
-  <timeline-event ng-repeat="doc in vm.timeline">
+<timeline layout="column">
+  <timeline-event ng-repeat="doc in vm.timeline | filter: search">
     <timeline-badge>
       <md-icon md-svg-icon="./assets/timeline_white.svg"></md-icon>
     </timeline-badge>
     <timeline-panel class="{{doc.title}}">
       <timeline-heading>
-        <h4>{{doc.title}}</h4>
+        <h4 text-align="center">{{doc.title}}</h4>
+        <md-button ng-click="vm.removeDoc(doc.id)" aria-label="remove">
+            [remove]
+          </md-button>
+        </h4>
+
       </timeline-heading>
     </timeline-panel>
   </timeline-event>
