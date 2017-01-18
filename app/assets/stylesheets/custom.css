@@ -28,30 +28,52 @@ md-sidenav md-icon {
 }
 
 timeline-panel:after {
-    position: absolute;
-    top: 36px;
-    right: -14px;
-    display: inline-block;
-    border-top: 14px solid transparent;
-    border-left: 14px solid #fff;
-    border-right: 0 solid #fff;
-    border-bottom: 14px solid transparent;
-    content: " ";
+  position: absolute;
+  top: 36px;
+  right: -14px;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 14px solid transparent;
+  content: " ";
+}
+
+@media only screen and (max-width: 767px)
+timeline-panel:before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+  top: 46px;
 }
 
 timeline-panel:before {
-    position: absolute;
-    top: 35px;
-    right: -15px;
-    display: inline-block;
-    border-top: 15px solid transparent;
-    border-left: 15px solid #ccc;
-    border-right: 0 solid #ccc;
-    border-bottom: 15px solid transparent;
-    content: " ";
+  position: absolute;
+  top: 35px;
+  right: -15px;
+  display: inline-block;
+  border-top: 15px solid transparent;
+  border-left: 15px solid #ccc;
+  border-right: 0 solid #ccc;
+  border-bottom: 15px solid transparent;
+  content: " ";
+}
+
+@media only screen and (min-width: 768px)
+timeline-panel {
+  width: calc(50% - 70px);
+  width: -moz-calc(50% - 70px);
+  width: -webkit-calc(50% - 70px);
+}
+
+@media only screen and (max-width: 767px)
+timeline-panel {
+  width: calc(100% - 110px);
+  width: -moz-calc(100% - 110px);
+  width: -webkit-calc(100% - 110px);
 }
 
 timeline-badge {
   background-color: #6200ea;
 }
-
