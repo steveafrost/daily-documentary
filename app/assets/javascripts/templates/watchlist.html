@@ -7,17 +7,18 @@
   </md-input-container>
 </div>
 
-<div layout="row" ng-repeat="doc in vm.watchlist | filter: search">
-  <div layout="column">
-    <md-card>
-      <md-card-title>
-        <h4 ng-bind="doc.title"></h4>
-      </md-card-title>
-      <md-card-actions layout-align="end center">
-        <md-button ng-click="vm.removeDoc(doc.id)" aria-label="remove">X</md-button>
-      </md-card-actions>
-    </md-card>
-  </div>
-</div>
+<md-content layout-padding>
+  <md-grid-list
+    md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
+    md-row-height-gt-md="4:3" md-row-height="4:3"
+    md-gutter="10px">
 
+    <md-grid-tile ng-repeat="doc in vm.watchlist" class="md-whiteframe-5dp" ui-sref="details({movie: vm.prettyUrl(doc.title)})" layout="column">
+      <img ng-src="{{doc.image}}">
+        <md-grid-tile-footer layout="row">
+          <span class="grid-tile-title" flex="80">{{doc.title}}</span>
+          <md-button ng-click="vm.removeDoc(doc.id)" aria-label="remove" layout-align="right">X</md-button>
+        </md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>
 </md-content>
