@@ -16,7 +16,7 @@
       return profileFactory.addToTimeline(docTitle)
                            .then(showMessage);
         function showMessage(response) {
-          $mdToast.showSimple(response.pop().title + 'added to timeline');
+          $mdToast.showSimple(response.pop().title + ' added to timeline');
         }
     }
 
@@ -24,7 +24,7 @@
       return profileFactory.addToWatchlist(docTitle)
                            .then(showMessage);
         function showMessage(response) {
-          $mdToast.showSimple(response.pop().title + 'added to watchlist');
+          $mdToast.showSimple(response.pop().title + ' added to watchlist');
         }
     }
 

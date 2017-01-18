@@ -16,11 +16,6 @@ class API::DocumentariesController < ApplicationController
     end
   end
 
-  def update
-    documentary = Documentary.find_by_name(documentary_params.title)
-    documentary.update(documentary_params)
-  end
-
   def destroy
     if @doc.destroy
       render json: { message: "#{@doc.title} was successfully removed" }
