@@ -1,47 +1,12 @@
-<!-- <md-list ng-repeat="doc in vm.docList track by doc.id">
-  <md-list-item ui-sref="details({movie: vm.prettyUrl(doc.title)})">
-    <h4 ng-bind="doc.title"></h4>
-  </md-list-item>
-  <md-divider></md-divider>
-</md-list> -->
-
-<!-- <div layout="row" layout-wrap layout-align="center">
-  <md-card ng-repeat="doc in vm.docList" flex="30" ui-sref="details({movie: vm.prettyUrl(doc.title)})">
-    <img ng-src="{{doc.image}}" class="md-card-image" alt="{{doc.title}}">
-
-    <md-card-title>
-      <md-card-title-text>
-        <span class="md-headline">{{doc.title}}</span>
-      </md-card-title-text>
-    </md-card-title>
-
-    <md-card-actions layout="row" layout-align="end center">
-      <md-button ng-href="{{doc.url}}" target="_blank" aria-label="view">
-        <md-icon md-svg-icon="./assets/view.svg"></md-icon>
-        <md-tooltip>Watch Now</md-tooltip>
-      </md-button>
-
-      <md-button ng-click="vm.addToTimeline(doc.title)" aria-label="timeline">
-        <md-icon md-svg-icon="./assets/timeline_black.svg"></md-icon>
-        <md-tooltip>Watched</md-tooltip>
-      </md-button>
-
-      <md-button ng-click="vm.addToWatchlist(doc.title)" aria-label="watchlist">
-        <md-icon md-svg-icon="./assets/watchlist.svg"></md-icon>
-        <md-tooltip>Watch Later</md-tooltip>
-      </md-button>
-    </md-card-actions>
-  </md-card>
-</div> -->
 <md-content layout-padding>
   <md-grid-list
         md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
         md-row-height-gt-md="4:3" md-row-height="4:3"
         md-gutter="10px">
 
-    <md-grid-tile ng-repeat="doc in vm.docList" class="md-whiteframe-5dp">
-      <img src="{{doc.image}}">
+    <md-grid-tile ng-repeat="doc in vm.docList" class="md-whiteframe-5dp" ui-sref="details({movie: vm.prettyUrl(doc.title)})">
+      <img ng-src="{{doc.image}}">
       <md-grid-tile-footer><h3>{{doc.title}}</h3></md-grid-tile-footer>
     </md-grid-tile>
   </md-grid-list>
-  </md-content>
+</md-content>

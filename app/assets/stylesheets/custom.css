@@ -44,3 +44,7 @@ md-grid-list md-grid-tile md-grid-tile-footer h3 {
   font-weight: 700;
   font-size: 18px;
 }
+
+md-grid-tile:hover {
+  cursor: pointer;
+}
