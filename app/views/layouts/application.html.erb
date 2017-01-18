@@ -24,9 +24,12 @@
         <md-button class="md-icon-button" aria-label="happy" ng-click="vm.happyChange()">
           <md-icon md-svg-icon="./assets/happy.svg"></md-icon>
         </md-button>
-        <md-button class="md-icon-button" aria-label="share">
+
+        <md-button class="md-icon-button" aria-label="share" href="{{vm.tweetText()}}" target="_blank">
           <md-icon md-svg-icon="./assets/share.svg"></md-icon>
+          <md-tooltip>Tweet About Us</md-tooltip>
         </md-button>
+
       </div>
     </md-toolbar>
 
