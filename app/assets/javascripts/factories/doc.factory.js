@@ -43,7 +43,7 @@
         docInfo = response.data.data.children[0].data;
         docTitle = trimToFirstSymbol(titleCase(docInfo.title));
         docUrl = docInfo.url;
-        return {docTitle: docTitle, docUrl: docUrl};
+        return {docTitle: docTitle, docUrl: docUrl.trim()};
       }
 
       function handleError(error) {
@@ -80,7 +80,6 @@
         return str.substring(0, str.search(allSymbols));
       }
 
-
-
     }
+
 }());
