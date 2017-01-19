@@ -39,7 +39,14 @@ timeline-heading, timeline-heading h4 {
 span.grid-tile-title {
   font-weight: 700;
   font-size: 18px;
-  padding-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+figcaption {
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 md-grid-list md-grid-tile figure {
@@ -57,8 +64,6 @@ md-grid-tile:hover {
 
 md-grid-list md-grid-tile md-grid-tile-footer {
   background: rgba(0, 0, 0, 0.75);
-}
-
-md-card md-card-title md-card-title-text {
-  padding-left: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
