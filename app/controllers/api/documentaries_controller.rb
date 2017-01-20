@@ -8,7 +8,8 @@ class API::DocumentariesController < ApplicationController
   end
 
   def create
-    Documentary.create_or_update(documentary_params)
+    @doc = Documentary.first_or_initialize(title: documentary_params[:title])
+    @doc.update_attributes(documentary_params)
     if request.headers["Profile-Type"] == "watchlist"
       render json: Documentary.where(watchlist: true)
     else
