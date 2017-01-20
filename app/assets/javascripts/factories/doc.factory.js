@@ -17,7 +17,7 @@
       };
 
       function getDocList() {
-        return $http.get('https://www.reddit.com/r/Documentaries.json')
+        return $http.get('https://www.reddit.com/r/Documentaries/top.json')
                     .then(handleList)
                     .catch(handleError);
       }
