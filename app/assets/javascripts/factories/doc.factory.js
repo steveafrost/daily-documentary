@@ -54,8 +54,8 @@
         var allDocs = response.data.data.children;
         var docList = [];
 
-        allDocs.forEach(function(element, index) {
-          docInfo = element.data;
+        angular.forEach(allDocs, function(doc, index) {
+          docInfo = doc.data;
           docPattern = /[$&+,:;=?@#|'<>.^*()%!-]/;
           docTitle = trimToFirstSymbol(titleCase(docInfo.title));
           docUrl = docInfo.url;
