@@ -5,7 +5,7 @@
       md-gutter="10px">
 
     <md-grid-tile ng-repeat="doc in vm.docList" class="md-whiteframe-5dp">
-      <img ng-src="{{doc.image}}" ui-sref="details({movie: vm.prettyUrl(doc.title)})">
+      <img ng-src="{{doc.image}}" ng-click="vm.docDetails = doc" ui-sref="details({movie: vm.prettyUrl(doc.title)})">
       <md-grid-tile-footer>
         <span class="grid-tile-title">
           {{doc.title}}
