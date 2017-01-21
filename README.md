@@ -32,6 +32,7 @@ Please ensure your pull request adheres to the following guidelines:
 Thank you for your suggestions!
 
 ## Future Work
+* Pass through details from index -> details and save those to DB
 * Implement Devise/oAuth to allow users to have their own profiles
 * Switch movie details API from oIMDB to MovieDB for realiability and speed increase
 * Create logo for web app & README.md
