@@ -19,7 +19,8 @@
           url: '/documentaries/:movie',
           templateUrl: 'details.html',
           controller: 'DocDetailsController',
-          controllerAs: 'vm'
+          controllerAs: 'vm',
+          params: {docActions: false}
         })
         .state('profile', {
           url: '/profile',
