@@ -10,12 +10,16 @@
     vm.addToTimeline = addToTimeline;
     vm.addToWatchlist = addToWatchlist;
     vm.docDetails = [];
+    vm.docActions = [];
 
     activate();
 
     function activate() {
       docFactory.getDocDetails($stateParams.movie).then(function(data) {
         vm.docDetails = data;
+      });
+      docFactory.getDocActions($stateParams.movie).then(function(data) {
+        vm.docActions = data;
       });
     }
 

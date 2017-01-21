@@ -33,11 +33,7 @@
         };
 
         return $http(req)
-                    .then(updateTimeline);
-
-        function updateTimeline(response) {
-          return response.data;
-        }
+                    .then(handleResponse);
       }
 
       function addToWatchlist(title) {
@@ -59,12 +55,7 @@
         };
 
         return $http(req)
-                    .then(updateWatchlist);
-
-        function updateWatchlist(response) {
-          console.log('this is the response' + response.data);
-          return response.data;
-        }
+                    .then(handleResponse);
       }
 
       function getTimeline() {
@@ -79,13 +70,16 @@
                     .catch(handleError);
       }
 
-      function handleResponse(response) {
-        return response.data;
+      function handleDelete(response) {
+        return response.data.message;
       }
 
       function handleError(error) {
-        console.log(error);
         return error;
+      }
+
+      function handleResponse(response) {
+        return response.data;
       }
 
       function removeDoc(docId) {
@@ -99,10 +93,6 @@
 
         return $http(req)
                     .then(handleDelete);
-
-        function handleDelete(response) {
-          return response.data.message;
-        }
       }
 
     }
