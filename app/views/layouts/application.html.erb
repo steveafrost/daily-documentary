@@ -10,7 +10,7 @@
   </head>
 
   <body layout="column" ng-controller="AppController as vm">
-
+    <md-progress-linear md-mode="indeterminate" ng-if="vm.loading"></md-progress-linear>
     <md-toolbar>
       <div class="md-toolbar-tools">
         <md-button class="md-icon-button" aria-label="menu" ng-click="vm.toggleNav()">

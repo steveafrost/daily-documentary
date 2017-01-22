@@ -5,12 +5,17 @@
     .module('dailyDocumentary')
     .controller('AppController', AppController);
 
-  function AppController($mdSidenav) {
+  function AppController($mdSidenav, $scope) {
     var vm = this;
     vm.toggleNav = toggleNav;
     vm.happyChange = happyChange;
     vm.happyCount = 0;
     vm.tweetText = tweetText;
+    vm.loading = false;
+
+    $scope.$on('loading', function(event, data) {
+      vm.loading = data;
+    });
 
     function happyChange() {
       vm.happyCount++;

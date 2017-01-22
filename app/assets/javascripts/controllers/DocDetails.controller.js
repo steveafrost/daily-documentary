@@ -5,7 +5,7 @@
     .module('dailyDocumentary')
     .controller('DocDetailsController', DocDetailsController);
 
-  function DocDetailsController($mdToast, $stateParams, docFactory, profileFactory) {
+  function DocDetailsController($mdToast, $stateParams, $scope, docFactory, profileFactory) {
     var vm = this;
     vm.addToTimeline = addToTimeline;
     vm.addToWatchlist = addToWatchlist;
@@ -15,14 +15,11 @@
     activate();
 
     function activate() {
-      console.log(vm.docActions);
-      console.log($stateParams);
+      $scope.$emit('loading', true);
       docFactory.getDocDetails($stateParams.movie).then(function(data) {
         vm.docDetails = data;
+        $scope.$emit('loading', false);
       });
-      // docFactory.getDocActions($stateParams.movie).then(function(data) {
-      //   vm.docActions = data;
-      // });
     }
 
     function addToTimeline(docTitle) {

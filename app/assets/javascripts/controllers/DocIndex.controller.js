@@ -5,7 +5,7 @@
     .module('dailyDocumentary')
     .controller('DocIndexController', DocIndexController);
 
-    function DocIndexController($mdToast, $state, docFactory, profileFactory) {
+    function DocIndexController($mdToast, $state, $scope, docFactory, profileFactory) {
 
       var vm = this;
       vm.addToTimeline = addToTimeline;
@@ -16,6 +16,7 @@
       activate();
 
       function activate() {
+        $scope.$emit('loading', true);
         docFactory.getDocList().then(setDocList);
       }
 
@@ -41,6 +42,7 @@
 
       function setDocList(data) {
         vm.docList = data;
+        $scope.$emit('loading', false);
       }
 
     }
