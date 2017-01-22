@@ -5,9 +5,9 @@
     .module('dailyDocumentary')
     .controller('DocDetailsController', DocDetailsController);
 
-  DocDetailsController.$inject = ['$mdToast', '$stateParams', '$scope', 'docFactory', 'profileFactory'];
+  DocDetailsController.$inject = ['$filter', '$mdToast', '$stateParams', '$scope', 'docFactory', 'profileFactory'];
 
-  function DocDetailsController($mdToast, $stateParams, $scope, docFactory, profileFactory) {
+  function DocDetailsController($filter, $mdToast, $stateParams, $scope, docFactory, profileFactory) {
     var vm = this;
     vm.addToTimeline = addToTimeline;
     vm.addToWatchlist = addToWatchlist;
@@ -29,7 +29,8 @@
                            .then(showMessage);
 
         function showMessage(response) {
-          $mdToast.showSimple(response.pop().title + ' added to timeline');
+          var addedDoc = $filter('filter')(response, {title: vm.docActions.title}, true);
+          $mdToast.showSimple(addedDoc.pop().title + ' added to timeline');
         }
     }
 
@@ -38,7 +39,8 @@
                            .then(showMessage);
 
         function showMessage(response) {
-          $mdToast.showSimple(response.pop().title + ' added to watchlist');
+          var addedDoc = $filter('filter')(response, {title: vm.docActions.title}, true);
+          $mdToast.showSimple(addedDoc.pop().title + ' added to watchlist');
         }
     }
 
