@@ -3,10 +3,10 @@
       <md-card>
         <md-card-title>
           <md-card-title-media ng-show="vm.docDetails.Poster">
-            <div class="md-media-lg card-media"><img ng-src="{{vm.docDetails.Poster}}"></div>
+            <div class="md-media-xl"><img ng-src="{{vm.docDetails.Poster}}"></div>
           </md-card-title-media>
           <md-card-title-text>
-              <span class="md-display-1" ng-bind="vm.docActions.docTitle"></span>
+              <span class="md-display-2" ng-bind="vm.docActions.title"></span>
               <p ng-show="!vm.docActions">Doc watch details not available. This happens when using back and forward or loading a documentary page directly. Please navigate to individual docs via the index page.</p>
               <div ng-show="vm.docDetails.Error">
                 <p>There are no additional details available for this video. Many docs on Daily Documentary are underground, personal, or same-day releases which is why you may not see additional info on all videos listed here.</p>

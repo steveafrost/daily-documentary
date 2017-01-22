@@ -71,3 +71,12 @@ md-grid-list md-grid-tile md-grid-tile-footer {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.md-media-xl {
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+md-card-title-text p {
+  font-size: 18px;
+}
