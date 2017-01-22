@@ -1,3 +1,3 @@
 class DocumentarySerializer < ActiveModel::Serializer
-  attributes :id, :title, :timeline, :watchlist
+  attributes :id, :title, :image, :url, :timeline, :watchlist
 end
