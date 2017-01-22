@@ -1,8 +1,10 @@
 (function() {
   'use-strict';
 
-angular.module('dailyDocumentary')
-       .controller('ProfileController', ProfileController);
+  angular.module('dailyDocumentary')
+         .controller('ProfileController', ProfileController);
+
+  ProfileController.$inject = ['$mdToast', '$state', 'timeline', 'profileFactory', 'watchlist'];
 
   function ProfileController($mdToast, $state, timeline, profileFactory, watchlist) {
     var vm = this;

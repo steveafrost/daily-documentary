@@ -5,6 +5,8 @@
     .module('dailyDocumentary')
     .controller('AppController', AppController);
 
+  AppController.$inject = ['$mdSidenav', '$scope'];
+
   function AppController($mdSidenav, $scope) {
     var vm = this;
     vm.toggleNav = toggleNav;

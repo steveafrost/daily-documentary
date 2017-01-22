@@ -5,6 +5,8 @@
     .module('dailyDocumentary')
     .controller('DocDetailsController', DocDetailsController);
 
+  DocDetailsController.$inject = ['$mdToast', '$stateParams', '$scope', 'docFactory', 'profileFactory'];
+
   function DocDetailsController($mdToast, $stateParams, $scope, docFactory, profileFactory) {
     var vm = this;
     vm.addToTimeline = addToTimeline;
