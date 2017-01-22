@@ -10,7 +10,6 @@
       return {
         getDocList: getDocList,
         getDocDetails: getDocDetails,
-        getDocActions: getDocActions,
         prettyUrl: prettyUrl,
         titleCase: titleCase,
         trimToFirstSymbol: trimToFirstSymbol
@@ -27,12 +26,6 @@
         return $http.get('http://www.omdbapi.com/?t=' + concatTitle + '&y=&plot=short&r=json')
                     .then(handleDetails)
                     .catch(handleError);
-      }
-
-      function getDocActions(docTitle) {
-        concatTitle = docTitle.replace(/\ /g, "+");
-        return $http.get('https://www.reddit.com/r/Documentaries/search.json?q=' + concatTitle + '&restrict_sr=on&limit=1')
-                    .then(handleDocActions);
       }
 
       function handleDetails(response) {

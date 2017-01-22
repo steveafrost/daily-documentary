@@ -13,14 +13,22 @@
     md-row-height-gt-md="4:3" md-row-height="4:3"
     md-gutter="10px">
 
-    <md-grid-tile ng-repeat="doc in vm.watchlist" class="md-whiteframe-5dp"  layout="column">
+    <md-grid-tile ng-repeat="doc in vm.watchlist" class="md-whiteframe-5dp">
+
       <img ng-src="{{doc.image}}" ui-sref="details({movie: doc.title, docActions: doc})">
+
       <md-grid-tile-footer layout="row">
-        <span class="grid-tile-title">{{doc.title}}</span>
-        <md-button ng-click="vm.removeDoc(doc.id)" target="_blank" aria-label="remove" layout-align="center end">
+        <span class="grid-tile-title">
+          {{doc.title}}
+        </span>
+
+        <span class="grid-tile-remove">
+        <md-button ng-click="vm.removeDoc(doc.id)" aria-label="remove" layout-align="center end">
           <md-icon md-svg-icon="./assets/remove.svg"></md-icon>
           <md-tooltip>Remove</md-tooltip>
         </md-button>
+        </span>
+
       </md-grid-tile-footer>
     </md-grid-tile>
   </md-grid-list>
