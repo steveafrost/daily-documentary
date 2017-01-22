@@ -28,7 +28,7 @@ class API::DocumentariesController < ApplicationController
   private
 
   def documentary_params
-    params.require(:documentary).permit(:title, :timeline, :watchlist)
+    params.require(:documentary).permit(:title, :image, :url, :timeline, :watchlist)
   end
 
   def set_doc

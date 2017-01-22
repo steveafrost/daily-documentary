@@ -38,7 +38,7 @@
                     .then(handleResponse);
       }
 
-      function addToWatchlist(title) {
+      function addToWatchlist(doc) {
         var req = {
           method: 'POST',
           url: '/api/documentaries',
