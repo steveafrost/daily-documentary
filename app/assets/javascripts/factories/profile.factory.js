@@ -15,7 +15,7 @@
         removeDoc: removeDoc
       };
 
-      function addToTimeline(title) {
+      function addToTimeline(docObj) {
         var req = {
           method: 'POST',
           url: '/api/documentaries',
@@ -25,7 +25,9 @@
           },
           data: {
             "documentary":{
-              "title": title,
+              "title": docObj.title,
+              "image": docObj.image,
+              "url" : docObj.url,
               "timeline": true,
               "watchlist": false
             }
@@ -78,6 +80,7 @@
       }
 
       function handleResponse(response) {
+        console.log(response);
         return response.data;
       }
 

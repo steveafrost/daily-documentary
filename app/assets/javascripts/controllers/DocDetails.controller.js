@@ -24,8 +24,8 @@
       });
     }
 
-    function addToTimeline(docTitle) {
-      return profileFactory.addToTimeline(docTitle)
+    function addToTimeline(docObj) {
+      return profileFactory.addToTimeline(docObj)
                            .then(showMessage);
 
         function showMessage(response) {

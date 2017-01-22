@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112021122) do
+ActiveRecord::Schema.define(version: 20170122185904) do
 
   create_table "documentaries", force: :cascade do |t|
     t.string  "title"
-    t.integer "views"
+    t.string  "image"
+    t.string  "url"
     t.boolean "timeline"
     t.boolean "watchlist"
+    t.integer "views"
   end
 
 end
