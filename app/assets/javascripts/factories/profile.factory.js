@@ -37,7 +37,6 @@
       }
 
       function addToWatchlist(title) {
-        console.log('this is the title' + title);
         var req = {
           method: 'POST',
           url: '/api/documentaries',
