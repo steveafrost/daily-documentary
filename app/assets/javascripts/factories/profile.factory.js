@@ -38,7 +38,7 @@
                     .then(handleResponse);
       }
 
-      function addToWatchlist(doc) {
+      function addToWatchlist(docObj) {
         var req = {
           method: 'POST',
           url: '/api/documentaries',
@@ -48,7 +48,9 @@
           },
           data: {
             "documentary":{
-              "title": title,
+              "title": docObj.title,
+              "image": docObj.image,
+              "url" : docObj.url,
               "timeline": false,
               "watchlist": true
             }

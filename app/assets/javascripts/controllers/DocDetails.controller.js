@@ -24,8 +24,8 @@
       });
     }
 
-    function addToTimeline(docObj) {
-      return profileFactory.addToTimeline(docObj)
+    function addToTimeline() {
+      return profileFactory.addToTimeline(vm.docActions)
                            .then(showMessage);
 
         function showMessage(response) {
@@ -33,8 +33,8 @@
         }
     }
 
-    function addToWatchlist(docTitle) {
-      return profileFactory.addToWatchlist(docTitle)
+    function addToWatchlist() {
+      return profileFactory.addToWatchlist(vm.docActions)
                            .then(showMessage);
 
         function showMessage(response) {

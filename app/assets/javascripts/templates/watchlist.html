@@ -14,11 +14,14 @@
     md-gutter="10px">
 
     <md-grid-tile ng-repeat="doc in vm.watchlist" class="md-whiteframe-5dp"  layout="column">
+    {{doc}}
 
-      <img ng-src="{{doc.image}}" ui-sref="details({movie: vm.prettyUrl(doc.title)})">
+      <img ng-src="{{doc.image}}" ui-sref="details({movie: vm.prettyUrl(doc.title), docActions: doc})">
 
         <md-grid-tile-footer layout="row">
+        <img ng-src="{{doc.image}}" ui-sref="details({movie: vm.prettyUrl(doc.title), docActions: doc})">
           <span class="grid-tile-title">{{doc.title}}</span>
+
           <md-button ng-click="vm.removeDoc(doc.id)" target="_blank" aria-label="remove" layout-align="center end">
             <md-icon md-svg-icon="./assets/remove.svg"></md-icon>
             <md-tooltip>Remove</md-tooltip>
