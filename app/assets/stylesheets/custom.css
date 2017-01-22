@@ -36,6 +36,10 @@ timeline-heading, timeline-heading h4 {
   margin-bottom: 0px;
 }
 
+md-grid-tile-footer {
+  white-space: nowrap;
+}
+
 span.grid-tile-title {
   font-weight: 700;
   font-size: 18px;
