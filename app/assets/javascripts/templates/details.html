@@ -7,6 +7,7 @@
           </md-card-title-media>
           <md-card-title-text>
               <span class="md-display-1" ng-bind="vm.docActions.docTitle"></span>
+              <p ng-show="!vm.docActions">Doc watch details not available. This happens when using back and forward or loading a documentary page directly. Please navigate to individual docs via the index page.</p>
               <div ng-show="vm.docDetails.Error">
                 <p>There are no additional details available for this video. Many docs on Daily Documentary are underground, personal, or same-day releases which is why you may not see additional info on all videos listed here.</p>
 
@@ -21,17 +22,23 @@
         </md-card-title>
 
         <md-card-actions layout-align="end" layout="row">
-          <md-button ng-href="{{vm.docActions.docUrl}}" target="_blank" aria-label="view">
+          <div flex>
+            <md-button ui-sref="documentaries" aria-label="documentaries-index">
+              Return
+            </md-button>
+          </div>
+
+          <md-button ng-href="{{vm.docActions.url}}" target="_blank" aria-label="view" ng-show="vm.docActions">
             <md-icon md-svg-icon="./assets/view.svg"></md-icon>
             <md-tooltip>Watch Now</md-tooltip>
           </md-button>
 
-          <md-button ng-click="vm.addToTimeline(vm.docActions.docTitle)" aria-label="timeline">
+          <md-button ng-click="vm.addToTimeline(vm.docActions.title)" aria-label="timeline" ng-show="vm.docActions">
             <md-icon md-svg-icon="./assets/timeline_black.svg"></md-icon>
             <md-tooltip>Watched</md-tooltip>
           </md-button>
 
-          <md-button ng-click="vm.addToWatchlist(vm.docActions.docTitle)" aria-label="watchlist">
+          <md-button ng-click="vm.addToWatchlist(vm.docActions.title)" aria-label="watchlist" ng-show="vm.docActions">
             <md-icon md-svg-icon="./assets/watchlist.svg"></md-icon>
             <md-tooltip>Watch Later</md-tooltip>
           </md-button>
