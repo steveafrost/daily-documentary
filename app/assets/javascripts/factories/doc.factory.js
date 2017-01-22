@@ -12,7 +12,7 @@
         getDocDetails: getDocDetails,
         prettyUrl: prettyUrl,
         titleCase: titleCase,
-        trimToFirstSymbol: trimToFirstSymbol
+        trimToYearMarker: trimToYearMarker
       };
 
       function getDocList() {
@@ -34,7 +34,7 @@
 
       function handleDocActions(response) {
         docInfo = response.data.data.children[0].data;
-        docTitle = trimToFirstSymbol(titleCase(docInfo.title));
+        docTitle = trimToYearMarker(titleCase(docInfo.title));
         docUrl = docInfo.url;
         return {docTitle: docTitle, docUrl: docUrl.trim()};
       }
@@ -49,8 +49,7 @@
 
         angular.forEach(allDocs, function(doc, index) {
           docInfo = doc.data;
-          docPattern = /[$&+,:;=?@#|'<>.^*()%!-]/;
-          docTitle = trimToFirstSymbol(titleCase(docInfo.title));
+          docTitle = trimToYearMarker(titleCase(docInfo.title));
           docUrl = docInfo.url;
           docImage = docInfo.preview.images[0].source.url;
           if (docTitle !== "" && !docTitle.includes("Request")) {
@@ -68,9 +67,11 @@
         return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
       }
 
-      function trimToFirstSymbol(str) {
-        allSymbols = (/[$&+,:;=?@#|'<>.^*()%!-]/);
-        return str.substring(0, str.search(allSymbols));
+      function trimToYearMarker(str) {
+        // yearMarker = (/\:\s\(\d{4}\)|\(\d{4}\)/);
+        // return str.replace(yearMarker, "");
+        yearMarker = (/\(\d/);
+        return str.substring(0, str.search(yearMarker));
       }
 
     }
