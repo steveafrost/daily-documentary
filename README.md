@@ -10,7 +10,7 @@ After watching a doc, mark it as watched to add it to the timeline. See a doc bu
 
 ### Installation
 * Fork & clone repo
-* Run `bundle install` in Terminal
+* Run `bundle install && rake db:migrate` in Terminal
 
 ### Usage
 * Type `rails s` in Terminal to run Rails server
