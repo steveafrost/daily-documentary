@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'angular-rails-templates', '~> 1.0', '>= 1.0.2'
 # Use ActiveModel serializers to render JSON from Rails DB
 gem 'active_model_serializers', '~> 0.10.0'
+# Use Devise for Authentication
+gem 'devise'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
@@ -36,6 +38,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular-material-icons'
   gem 'rails-assets-angular-ui-router'
   gem 'rails-assets-angular-timeline'
+  gem 'rails-assets-angular-devise'
 end
 
 group :development, :test do
