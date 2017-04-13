@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require angular
+//= require angular-devise
 //= require angular-material
 //= require angular-material-icons
 //= require angular-aria

@@ -46,23 +46,36 @@
             </md-button>
           </md-list-item>
 
-          <md-list-item>
-
-            <md-button ui-sref="profile" ng-click="vm.toggleNav()">
-              <md-icon md-svg-icon="./assets/profile.svg"></md-icon>  Profile
-            </md-button>
+          <md-list-item ng-hide="signedIn()">
+            <md-button ui-sref="login" ng-click="vm.toggleNav()">
+              <md-icon md-svg-icon="./assets/profile.svg"></md-icon>  Login
           </md-list-item>
 
-          <md-list-item>
+          <md-list-item ng-hide="signedIn()">
+            <md-button ui-sref="register" ng-click="vm.toggleNav()">
+              <md-icon md-svg-icon="./assets/profile.svg"></md-icon>  Register
+          </md-list-item>
+
+          <md-list-item ng-show="signedIn()">
+            <md-button ui-sref="profile" ng-click="vm.toggleNav()">
+              <md-icon md-svg-icon="./assets/profile.svg"></md-icon>  {{user.username}}
+          </md-list-item>
+
+          <md-list-item ng-show="signedIn()">
             <md-button ui-sref="profile.timeline" ng-click="vm.toggleNav()">
               <md-icon md-svg-icon="./assets/timeline_black.svg"></md-icon>  Timeline
               </md-button>
           </md-list-item>
 
-          <md-list-item>
+          <md-list-item ng-show="signedIn()">
             <md-button ui-sref="profile.watchlist" ng-click="vm.toggleNav()">
             <md-icon md-svg-icon="./assets/watchlist.svg"></md-icon>  Watchlist
             </md-button>
+          </md-list-item>
+
+          <md-list-item ng-show="signedIn()">
+            <md-button ui-sref="profile" ng-click="logout()">
+              <md-icon md-svg-icon="./assets/profile.svg"></md-icon>  Logout
           </md-list-item>
         </md-list>
       </md-sidenav>
