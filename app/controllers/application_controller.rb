@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
   after_action :set_csrf_cookie_for_ng
+
+  respond_to :json
 
   def landing
     render 'layouts/application.html.erb'

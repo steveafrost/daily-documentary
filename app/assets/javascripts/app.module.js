@@ -2,7 +2,7 @@
   'use-strict';
 
   angular
-    .module('dailyDocumentary', ['ui.router', 'templates', 'ngMaterial', 'angular-timeline'])
+    .module('dailyDocumentary', ['ui.router', 'templates', 'ngMaterial', 'angular-timeline','Devise'])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $mdThemingProvider) {
       $stateProvider
         .state('home', {
