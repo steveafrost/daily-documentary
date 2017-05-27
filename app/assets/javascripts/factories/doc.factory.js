@@ -5,6 +5,8 @@
     .module('dailyDocumentary')
     .factory('docFactory', docFactory);
 
+    docFactory.$inject = ['$http'];
+
     function docFactory($http) {
 
       return {

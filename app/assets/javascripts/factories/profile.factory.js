@@ -5,6 +5,8 @@
     .module('dailyDocumentary')
     .factory('profileFactory', profileFactory);
 
+    profileFactory.$inject = ['$http'];
+
     function profileFactory($http) {
 
       return {
