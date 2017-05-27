@@ -24,7 +24,7 @@
       }
 
       function getDocDetails(docTitle) {
-        concatTitle = docTitle.replace(/\ /g, "+");
+        var concatTitle = docTitle.replace(/\ /g, "+");
         return $http.get('http://www.omdbapi.com/?t=' + concatTitle + '&y=&plot=full&r=json&apikey=6ce37ef1')
                     .then(handleDetails)
                     .catch(handleError);
@@ -35,9 +35,9 @@
       }
 
       function handleDocActions(response) {
-        docInfo = response.data.data.children[0].data;
-        docTitle = trimToYearMarker(titleCase(docInfo.title));
-        docUrl = docInfo.url;
+        var docInfo = response.data.data.children[0].data;
+        var docTitle = trimToYearMarker(titleCase(docInfo.title));
+        var docUrl = docInfo.url;
         return {docTitle: docTitle, docUrl: docUrl.trim()};
       }
 
@@ -50,10 +50,10 @@
         var docList = [];
 
         angular.forEach(allDocs, function(doc, index) {
-          docInfo = doc.data;
-          docTitle = trimToYearMarker(titleCase(docInfo.title));
-          docUrl = docInfo.url;
-          docImage = docInfo.preview.images[0].source.url;
+          var docInfo = doc.data;
+          var docTitle = trimToYearMarker(titleCase(docInfo.title));
+          var docUrl = docInfo.url;
+          var docImage = docInfo.preview.images[0].source.url;
           if (docTitle !== "" && !docTitle.includes("Request")) {
             docList.push({id: index, title: docTitle, url: docUrl, image: docImage});
           }
@@ -72,7 +72,7 @@
       function trimToYearMarker(str) {
         // yearMarker = (/\:\s\(\d{4}\)|\(\d{4}\)/);
         // return str.replace(yearMarker, "");
-        yearMarker = (/\(\d/);
+        var yearMarker = (/\(\d/);
         return str.substring(0, str.search(yearMarker));
       }
 
