@@ -23,7 +23,7 @@
 
       function getDocDetails(docTitle) {
         concatTitle = docTitle.replace(/\ /g, "+");
-        return $http.get('http://www.omdbapi.com/?t=' + concatTitle + '&y=&plot=full&r=json')
+        return $http.get('http://www.omdbapi.com/?t=' + concatTitle + '&y=&plot=full&r=json&apikey=6ce37ef1')
                     .then(handleDetails)
                     .catch(handleError);
       }
