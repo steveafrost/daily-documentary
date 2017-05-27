@@ -3,7 +3,7 @@
 
   angular
     .module('dailyDocumentary', ['ui.router', 'templates', 'ngMaterial', 'angular-timeline'])
-    .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $mdThemingProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$mdThemingProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $mdThemingProvider) {
       $stateProvider
         .state('home', {
           url: '/',
@@ -53,6 +53,6 @@
       $mdThemingProvider.theme('default')
         .primaryPalette('teal')
         .accentPalette('deep-purple');
-  });
+  }]);
 
 }());
