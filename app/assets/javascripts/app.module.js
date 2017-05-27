@@ -28,12 +28,12 @@
           controller: 'ProfileController',
           controllerAs: 'vm',
           resolve: {
-            timeline: function(profileFactory) {
+            timeline: ['profileFactory', function(profileFactory) {
               return profileFactory.getTimeline();
-            },
-            watchlist: function(profileFactory) {
+            }],
+            watchlist: ['profileFactory', function(profileFactory) {
               return profileFactory.getWatchlist();
-            }
+            }]
           }
         })
         .state('profile.timeline', {
