@@ -1,18 +1,19 @@
 source 'https://rubygems.org'
+ruby '2.4.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Require at least 1.8.4 of Bundler to use Rails Assets
-gem 'bundler', '>= 1.8.4'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# Use Rails 5.0.1
 gem 'rails', '~> 5.0.1'
 # Use PostGres as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.20.0'
+# Require at least 1.8.4 of Bundler to use Rails Assets
+gem 'bundler', '>= 1.8.4'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
