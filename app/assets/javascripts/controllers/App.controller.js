@@ -28,7 +28,7 @@
     }
 
     function tweetText() {
-      return "https://twitter.com/intent/tweet?text=Daily%20Documentary%20helps%20you%20find,%20watch,%20and%20keep%20track%20of%20captivating%20documentaries%20-%20check%20it%20out%20@%20steveafrost.com";
+      return "https://twitter.com/intent/tweet?text=Daily%20Documentary%20helps%20you%20find,%20watch,%20and%20keep%20track%20of%20captivating%20documentaries%20-%20check%20it%20out%20@%20daily-documentary.herokuapp.com";
     }
   }
 

@@ -24,23 +24,23 @@
         <md-card-actions layout-align="end" layout="row">
           <div flex>
             <md-button ui-sref="documentaries" aria-label="documentaries-index">
-              <md-icon md-svg-icon="./assets/back.svg"></md-icon>
+              <md-icon md-svg-icon="<%= image_path('back.svg') %>"></md-icon>
               <md-tooltip>Back</md-tooltip>
             </md-button>
           </div>
 
           <md-button ng-href="{{vm.docActions.url}}" target="_blank" aria-label="view" ng-show="vm.docActions">
-            <md-icon md-svg-icon="./assets/view.svg"></md-icon>
+            <md-icon md-svg-icon="<%= image_path('view.svg') %>"></md-icon>
             <md-tooltip>Watch Now</md-tooltip>
           </md-button>
 
           <md-button ng-click="vm.addToTimeline()" aria-label="timeline" ng-show="vm.docActions">
-            <md-icon md-svg-icon="./assets/timeline_black.svg"></md-icon>
+            <md-icon md-svg-icon="<%= image_path('timeline_black.svg') %>"></md-icon>
             <md-tooltip>Watched</md-tooltip>
           </md-button>
 
           <md-button ng-click="vm.addToWatchlist()" aria-label="watchlist" ng-show="vm.docActions">
-            <md-icon md-svg-icon="./assets/watchlist.svg"></md-icon>
+            <md-icon md-svg-icon="<%= image_path('watchlist.svg') %>"></md-icon>
             <md-tooltip>Watch Later</md-tooltip>
           </md-button>
         </md-card-actions>

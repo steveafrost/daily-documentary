@@ -14,7 +14,7 @@
     <md-toolbar>
       <div class="md-toolbar-tools">
         <md-button class="md-icon-button" aria-label="menu" ng-click="vm.toggleNav()">
-          <md-icon md-svg-icon="./assets/menu.svg"></md-icon>
+          <md-icon md-svg-icon="<%= image_path('menu.svg') %>"></md-icon>
         </md-button>
         <h2>
           <a ui-sref="home"><span>Daily Documentary</span></a>
@@ -22,11 +22,11 @@
         <span flex></span>
         <h2>{{vm.happyCount}}</h2>
         <md-button class="md-icon-button" aria-label="happy" ng-click="vm.happyChange()">
-          <md-icon md-svg-icon="./assets/happy.svg"></md-icon>
+          <md-icon md-svg-icon="<%= image_path('happy.svg') %>"></md-icon>
         </md-button>
 
         <md-button class="md-icon-button" aria-label="share" href="{{vm.tweetText()}}" target="_blank">
-          <md-icon md-svg-icon="./assets/share.svg"></md-icon>
+          <md-icon md-svg-icon="<%= image_path('share.svg') %>"></md-icon>
           <md-tooltip>Tweet About Us</md-tooltip>
         </md-button>
 
@@ -42,26 +42,26 @@
         <md-list>
           <md-list-item>
             <md-button ui-sref="documentaries" ng-click="vm.toggleNav()">
-              <md-icon md-svg-icon="./assets/view.svg"></md-icon>  Documentaries
+              <md-icon md-svg-icon="<%= image_path('view.svg') %>"></md-icon>  Documentaries
             </md-button>
           </md-list-item>
 
           <md-list-item>
 
             <md-button ui-sref="profile" ng-click="vm.toggleNav()">
-              <md-icon md-svg-icon="./assets/profile.svg"></md-icon>  Profile
+              <md-icon md-svg-icon="<%= image_path('profile.svg') %>"></md-icon>  Profile
             </md-button>
           </md-list-item>
 
           <md-list-item>
             <md-button ui-sref="profile.timeline" ng-click="vm.toggleNav()">
-              <md-icon md-svg-icon="./assets/timeline_black.svg"></md-icon>  Timeline
+              <md-icon md-svg-icon="<%= image_path('timeline_black.svg') %>"></md-icon>  Timeline
               </md-button>
           </md-list-item>
 
           <md-list-item>
             <md-button ui-sref="profile.watchlist" ng-click="vm.toggleNav()">
-            <md-icon md-svg-icon="./assets/watchlist.svg"></md-icon>  Watchlist
+            <md-icon md-svg-icon="<%= image_path('watchlist.svg') %>"></md-icon>  Watchlist
             </md-button>
           </md-list-item>
         </md-list>

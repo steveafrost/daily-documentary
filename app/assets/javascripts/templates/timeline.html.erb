@@ -10,7 +10,7 @@
 <timeline layout="column">
   <timeline-event ng-repeat="doc in vm.timeline | filter: search">
     <timeline-badge>
-      <md-icon md-svg-icon="./assets/timeline_white.svg"></md-icon>
+      <md-icon md-svg-icon="<%= image_path('timeline_white.svg') %>"></md-icon>
     </timeline-badge>
     <timeline-panel class="{{doc.title}}">
       <timeline-heading>
