@@ -44,6 +44,26 @@
         .state('profile.watchlist', {
           url: '/watchlist',
           templateUrl: 'watchlist.html'
+        })
+        .state('login', {
+          url: '/login',
+          templateUrl: 'login.html',
+          controller: 'AuthCtrl',
+          onEnter: function(Auth, $state){
+            Auth.currentUser().then(function(){
+              $state.go('home')
+            })
+          }
+        })
+        .state('register', {
+          url: '/register',
+          templateUrl: 'register.html',
+          controller: 'AuthCtrl',
+          onEnter: function(Auth, $state){
+            Auth.currentUser().then(function(){
+              $state.go('home')
+            })
+          }
         });
 
 
